@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
     <!--Navigation bar at top-->
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/Signals.png" width="110px" ></a>
@@ -30,9 +30,6 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Signal Strength</a>
-          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link drop dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
               Username Here (Rating) <!--Signal Strength rating system-->
@@ -52,15 +49,30 @@
               <li><a class="dropdown-item" href="#">Log Out</a></li>
             </ul>
           </li>
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+        </ul> 
       </div>
     </div>
   </nav>
 
+  <section class="text-center">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-sm-3" id="watchlist">Watchlist</div>
+        <div class="col-sm" id="information">Information</div>
+        <div class="col-sm-3" id="alerts">Alerts</div>
+      </div>
+      <div class="row" id="bottom-row">
+        <div class="col-sm" id="my-portfolio">My Portfolio</div>
+        <div class="col-sm">col-sm</div>
+      </div>
+    </div>
+  </section> 
+
+
+  <!-- <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form> -->
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

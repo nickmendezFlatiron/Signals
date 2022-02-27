@@ -1,7 +1,30 @@
-.teal {
+#nav-bar {
   background-color: #20c997;
 }
 
 .teal-light {
   background-color: #d2f4ea;
+}
+
+.row {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #20c997;
+  padding: 5px;
+  margin: 5px;
+}
+
+ .row div {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #20c997;
+  margin: 3px;
+}
+
+#information {
+  height: 300px;
+}
+
+#bottom-row {
+  height: 200px;
 }
