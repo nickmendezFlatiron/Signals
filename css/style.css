@@ -22,9 +22,13 @@
 }
 
 #information {
-  height: 300px;
+  height: 1fr;
 }
 
 #bottom-row {
   height: 200px;
+}
+
+#asset-info {
+  height: max-content;
 }

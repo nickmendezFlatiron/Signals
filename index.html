@@ -54,16 +54,42 @@
     </div>
   </nav>
 
-  <section class="text-center">
+  <section class="text-center bg-light">
     <div class="container-fluid">
       <div class="row ">
-        <div class="col-sm-3" id="watchlist">Watchlist</div>
-        <div class="col-sm" id="information">Information</div>
-        <div class="col-sm-3" id="alerts">Alerts</div>
+        <div class="col-sm-2" id="watchlist">
+          <h4>Watchlist</h4>
+        </div>
+        <div class="col-sm" id="information">
+          <h4>Information</h4>
+          <input class="form-control form-control" type="text" placeholder="Search Markets" aria-label="Search">
+          
+            <div class="row" id="asset-info">
+              <div class="col-md">Chart</div>
+              <div class="col">
+                <div class="row-md">Asset Name</div>
+                <div class="row-md">Price</div>
+                <div class="row-md">%change</div>
+                <div class="row-md">volume</div>
+                <div class="row-md d-flex justify-content-evenly">
+                  <button type="button" class="btn btn-outline-primary" data-bs-toggle="button">Watchlist</button>
+                  <button type="button" class="btn btn-outline-primary" >Buy/Sell</button>
+                </div>
+              </div>
+            </div>
+      
+        </div>
+        <div class="col-sm-2" id="alerts">
+          <h4>Alerts</h4>
+        </div>
       </div>
       <div class="row" id="bottom-row">
-        <div class="col-sm" id="my-portfolio">My Portfolio</div>
-        <div class="col-sm">col-sm</div>
+        <div class="col-sm" id="my-portfolio">
+          <h4>My Portfolio</h4>
+        </div>
+        <div class="col-sm">
+          <h4>col-sm</h4>
+        </div>
       </div>
     </div>
   </section> 
