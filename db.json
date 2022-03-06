@@ -3,7 +3,7 @@
     { "name" : "Apple Inc." ,
       "ticker" : "AAPL" , 
       "type" : "Equity" ,
-      "region" : "stockRegion" 
+      "region" : "United States" 
     }  
   
   ]
