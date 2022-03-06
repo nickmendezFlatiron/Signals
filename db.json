@@ -1,3 +1,10 @@
 {
-  "project database" : [ ]
+  "watchlist" : [ 
+    { "name" : "Apple Inc." ,
+      "ticker" : "AAPL" , 
+      "type" : "Equity" ,
+      "region" : "stockRegion" 
+    }  
+  
+  ]
 }
