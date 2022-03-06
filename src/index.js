@@ -69,6 +69,6 @@ function appendResults(matchResults) {
 //Populates the main info section with the selected 
 function appendDisplay(e) {
   console.log('I was clicked')
-  console.log (e.target.innerText)
+  // console.log (e.target.innerText)
 
 }
