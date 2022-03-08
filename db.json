@@ -10,7 +10,7 @@
   "portfolio" : [ 
     { "name" : "Apple Inc." ,
       "quantity" : 3 , 
-      "avg-price" : 100 
+      "avgPrice" : 100 
     }  
   ] ,
   "trade-history" : [ 

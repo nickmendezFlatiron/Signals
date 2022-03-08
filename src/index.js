@@ -94,12 +94,13 @@ function organizeStockData(data) {
   let dataArray = (Object.entries(data))[0][1]
   let dataArrayKeys = Object.keys(dataArray)
 
-  return dataArrayKeys.map(key => {
+  dataArrayKeys.map(key => {
     let keyWithoutNumbers = key.slice(4)
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-
+  console.log(stockDataObj)
+  return stockDataObj
 }
 
 
