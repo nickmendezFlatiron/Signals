@@ -6,5 +6,20 @@
       "region" : "United States" 
     }  
   
+  ] ,
+  "portfolio" : [ 
+    { "name" : "Apple Inc." ,
+      "quantity" : 3 , 
+      "avg-price" : 100 
+    }  
+  ] ,
+  "trade-history" : [ 
+    { "quantity" : 3 ,
+      "ticker" : "AAPL" , 
+      "price" : 1000 ,
+      "transaction" : "sell" ,
+      "date" : "3-01-22"
+    }  
   ]
+
 }
