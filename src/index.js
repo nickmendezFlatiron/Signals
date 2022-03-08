@@ -2,7 +2,7 @@
 const searchbar = document.getElementById('searchbar')
 const searchMatches = document.getElementById('search-matches')
 const searchBtn = document.querySelector('#search-btn')
-let matchResults = [] ;
+let searchResultsMatches = [] ;
 
 
 //EVENT LISTENERS
@@ -24,10 +24,10 @@ function marketSearch(url)  {
     .then(res => res.json())
     .then(searchresults => {
       let bestMatchesArray = (Object.values(searchresults))[0]
-      matchResults = []
+      searchResultsMatches = []
       bestMatchesArray.map(bestMatch => simpleResults(bestMatch))
-      // console.log(matchResults[0].ticker)
-      appendResults(matchResults)
+      // console.log(searchResultsMatches[0].ticker)
+      appendResults(searchResultsMatches)
     })
 }
 
@@ -35,10 +35,13 @@ function marketSearch(url)  {
 function fetchStockData(url){
   fetch(url)
     .then(res => res.json())
-    .then(data => console.log(Object.entries(data))) 
+    .then(data => {organizeStockData(data)
+    
+    }) 
+    
 }
 
-//this function pushes a simplified object to the matchResults array for every best match found
+//this function pushes a simplified object to the searchResultsMatches array for every best match found
 function simpleResults(bestMatch) {
   const bestMatchSimplified = Object.values(bestMatch)
    console.log(bestMatchSimplified)
@@ -52,17 +55,17 @@ function simpleResults(bestMatch) {
     type : stockType ,
     region : stockRegion
   }
-  matchResults.push(match)
+  searchResultsMatches.push(match)
 }
 
 //appends the top 5 search results to the DOM Search Results Container 
-function appendResults(matchResults) {
+function appendResults(searchResultsMatches) {
   searchMatches.innerHTML = ``
   let n  = 0
-  matchResults.length < 5 ? n = matchResults.length : n = 5 ;
+  searchResultsMatches.length < 5 ? n = searchResultsMatches.length : n = 5 ;
   for(let i = 0 ; i < n ; i++)
    {
-    let match = matchResults[i]
+    let match = searchResultsMatches[i]
     let li = document.createElement('li')
     
     li.classList.add('list-group-item')
@@ -76,6 +79,37 @@ function appendResults(matchResults) {
 
 //Populates the main info section with the selected 
 function appendDisplay(e) {
+  e.stopPropagation()
   let url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${e.target.id}&apikey=VXY7DLJ0XAQQON66`
   fetchStockData(url)
+//   console.log(e.target)
+// console.log(`target id : ${e.target.id}`)
 }
+
+
+//organizes the stock data from the fetch request 
+// Fixes API JSON Object Keys from the fetch request and makes them usable
+function organizeStockData(data) {
+  let stockDataObj = {} ;
+  let dataArray = (Object.entries(data))[0][1]
+  let dataArrayKeys = Object.keys(dataArray)
+
+  return dataArrayKeys.map(key => {
+    let keyWithoutNumbers = key.slice(4)
+    let newKey = camelCase(keyWithoutNumbers)
+    stockDataObj[newKey] = `${dataArray[key]}`
+  })
+
+}
+
+
+//camelCases a string
+function camelCase (word) {
+    word = word.split(" ");
+    for (let i = 0, n = word.length; i < n; i++) {
+      word[i]= word[i][0].toUpperCase() + word[i].substring(1)
+    }
+    word = word.join("");
+    return word;
+}
+
