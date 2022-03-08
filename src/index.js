@@ -31,6 +31,13 @@ function marketSearch(url)  {
     })
 }
 
+//fetches the stock data for the selected stock 
+function fetchStockData(url){
+  fetch(url)
+    .then(res => res.json())
+    .then(data => console.log(Object.entries(data))) 
+}
+
 //this function pushes a simplified object to the matchResults array for every best match found
 function simpleResults(bestMatch) {
   const bestMatchSimplified = Object.values(bestMatch)
@@ -48,7 +55,7 @@ function simpleResults(bestMatch) {
   matchResults.push(match)
 }
 
-//appends the top 5 search results to the DOM 
+//appends the top 5 search results to the DOM Search Results Container 
 function appendResults(matchResults) {
   searchMatches.innerHTML = ``
   let n  = 0
@@ -59,7 +66,8 @@ function appendResults(matchResults) {
     let li = document.createElement('li')
     
     li.classList.add('list-group-item')
-    li.innerHTML = `${match.name}<span class="text-primary "> (${match.ticker})</span>
+    li.id = `${match.ticker}`
+    li.innerHTML = `${match.name}<span class="text-primary"> (${match.ticker})</span>
     `
     searchMatches.appendChild(li)
     li.addEventListener('click', e => appendDisplay(e))
@@ -68,7 +76,6 @@ function appendResults(matchResults) {
 
 //Populates the main info section with the selected 
 function appendDisplay(e) {
-  console.log('I was clicked')
-  // console.log (e.target.innerText)
-
+  let url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${e.target.id}&apikey=VXY7DLJ0XAQQON66`
+  fetchStockData(url)
 }
