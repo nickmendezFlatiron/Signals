@@ -36,7 +36,6 @@ function fetchStockData(url){
   fetch(url)
     .then(res => res.json())
     .then(data => {organizeStockData(data)
-    
     }) 
     
 }
@@ -88,9 +87,9 @@ function appendDisplay(e) {
 
 
 //organizes the stock data from the fetch request 
-// Fixes API JSON Object Keys from the fetch request and makes them usable
+// Fixes API JSON Object Keys from the fetch request and makes them usable for dot notation
 function organizeStockData(data) {
-  let stockDataObj = {} ;
+  const stockDataObj = {} ;
   let dataArray = (Object.entries(data))[0][1]
   let dataArrayKeys = Object.keys(dataArray)
 
@@ -99,10 +98,13 @@ function organizeStockData(data) {
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-  console.log(stockDataObj)
-  return stockDataObj
+  // let stockDataArr = Object.entries(stockDataObj)
+
+  
 }
 
+
+//UTLITY FUNCTIONS
 
 //camelCases a string
 function camelCase (word) {
@@ -114,3 +116,6 @@ function camelCase (word) {
     return word;
 }
 
+// function printToDOM(dataKey){
+//   let li
+// }
