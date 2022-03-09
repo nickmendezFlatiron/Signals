@@ -133,7 +133,7 @@ function printToDOM(stockDataObj){
   }
 
   const chart = document.querySelector('#chart')
-  addChart()
+  addChart(stockDataObj)
 
 }
 
@@ -152,31 +152,5 @@ function camelCase (word) {
 
 //grabs the appropriate chart from Tradingview
 function addChart(stockDataObj){
-  chart.innerHTML =`
-  <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget-container">
-    <div id="tradingview_99b3d"></div>
-    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-${stockDataObj.Symbol}/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-    new TradingView.widget(
-    {
-    "width": 980,
-    "height": 610,
-    "symbol": "NASDAQ:${stockDataObj.Symbol}",
-    "interval": "D",
-    "timezone": "Etc/UTC",
-    "theme": "dark",
-    "style": "1",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "allow_symbol_change": true,
-    "container_id": "tradingview_99b3d"
-  }
-    );
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-  `
+  chart.innerHTML = ``
 }
