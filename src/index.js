@@ -103,19 +103,7 @@ function organizeStockData(data) {
   
 }
 
-
-//UTLITY FUNCTIONS
-
-//camelCases a string
-function camelCase (word) {
-    word = word.split(" ");
-    for (let i = 0, n = word.length; i < n; i++) {
-      word[i]= word[i][0].toUpperCase() + word[i].substring(1)
-    }
-    word = word.join("");
-    return word;
-}
-
+//Prepends data of selected stock to the the main display
 function printToDOM(stockDataObj){
   let stockDataObjKeys = Object.keys(stockDataObj)
   let ul = document.querySelector("#main-display-data")
@@ -143,4 +131,52 @@ function printToDOM(stockDataObj){
     price.classList.add('text-success')
     change.classList.add('text-success')
   }
+
+  const chart = document.querySelector('#chart')
+  addChart()
+
+}
+
+
+//UTLITY FUNCTIONS
+
+//camelCases a string
+function camelCase (word) {
+    word = word.split(" ");
+    for (let i = 0, n = word.length; i < n; i++) {
+      word[i]= word[i][0].toUpperCase() + word[i].substring(1)
+    }
+    word = word.join("");
+    return word;
+}
+
+//grabs the appropriate chart from Tradingview
+function addChart(stockDataObj){
+  chart.innerHTML =`
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div id="tradingview_99b3d"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-${stockDataObj.Symbol}/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+    new TradingView.widget(
+    {
+    "width": 980,
+    "height": 610,
+    "symbol": "NASDAQ:${stockDataObj.Symbol}",
+    "interval": "D",
+    "timezone": "Etc/UTC",
+    "theme": "dark",
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "allow_symbol_change": true,
+    "container_id": "tradingview_99b3d"
+  }
+    );
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+  `
 }
