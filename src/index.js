@@ -44,7 +44,7 @@ function fetchStockData(url){
 //this function pushes a simplified object to the searchResultsMatches array for every best match found
 function simpleResults(bestMatch) {
   const bestMatchSimplified = Object.values(bestMatch)
-   console.log(bestMatchSimplified)
+  //  console.log(bestMatchSimplified)
   const stockSymbol = bestMatchSimplified[0].toString()
   const stockName = bestMatchSimplified[1].toString()
   const stockType = bestMatchSimplified[2].toString()
@@ -120,12 +120,11 @@ function printToDOM(stockDataObj){
   let stockDataObjKeys = Object.keys(stockDataObj)
   let ul = document.querySelector("#main-display-data")
   ul.innerHTML = `
-    <li class="list-group-item text-start" id="symbol">Symbol: ${stockDataObj.Symbol}</li>
-    <li class="list-group-item text-start" id="price">Price: ${stockDataObj.Price}</li>
-    <li class="list-group-item text-start" id="change-value">Change: $${stockDataObj.Change}</li>
-    <li class="list-group-item text-start" id="percent-change">Percent Change: ${stockDataObj.ChangePercent}</li>
-    <li class="list-group-item text-start" id="volume">Volume: ${stockDataObj.Volume} Trades</li>
-    <li class="list-group-item text-start" id="date">Trading Day: ${stockDataObj.LatestTradingDay} </li>
+    <li class="list-group-item text-start" id="symbol"><span class="text-primary">Symbol:</span> ${stockDataObj.Symbol}</li>
+    <li class="list-group-item text-start" id="date"><span class="text-primary">Trading Day:</span> ${stockDataObj.LatestTradingDay} </li>
+    <li class="list-group-item text-start" id="price"><span class="text-primary">Price:</span> ${stockDataObj.Price}</li>
+    <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change:</span> $${stockDataObj.Change} <small class="text-secondary">${stockDataObj.ChangePercent}</small></li>
+    <li class="list-group-item text-start" id="volume"><span class="text-primary">Volume:</span> ${stockDataObj.Volume} Trades</li>
     <li class="list-group-item d-flex">
         <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
     <div class="input-group">
