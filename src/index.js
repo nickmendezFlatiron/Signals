@@ -99,8 +99,7 @@ function organizeStockData(data) {
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-  // let stockDataArr = Object.entries(stockDataObj)
-
+  console.log(stockDataObj)
   
 }
 
@@ -120,11 +119,20 @@ function camelCase (word) {
 function printToDOM(stockDataObj){
   let stockDataObjKeys = Object.keys(stockDataObj)
   let ul = document.querySelector("#main-display-data")
-  stockDataObjKeys.forEach(dataKey => {
-    let li = document.createElement('li')
-    li.classList.add("list-group-item")
-    li.id = `${dataKey}`.toString()
-    li.innerText = `${dataKey} : ${stockDataObj[dataKey]}`
-    ul.prepend(li)
-  })
+  ul.innerHTML = `
+    <li class="list-group-item text-start" id="symbol">Symbol: ${stockDataObj.Symbol}</li>
+    <li class="list-group-item text-start" id="price">Price: ${stockDataObj.Price}</li>
+    <li class="list-group-item text-start" id="change-value">Change: $${stockDataObj.Change}</li>
+    <li class="list-group-item text-start" id="percent-change">Percent Change: ${stockDataObj.ChangePercent}</li>
+    <li class="list-group-item text-start" id="volume">Volume: ${stockDataObj.Volume} Trades</li>
+    <li class="list-group-item text-start" id="date">Trading Day: ${stockDataObj.LatestTradingDay} </li>
+    <li class="list-group-item d-flex">
+        <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
+    <div class="input-group">
+      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="button-addon2">
+      <button class="btn btn-primary" type="button" id="button-addon2">Buy/Sell</button>
+    </div>
+    </li>
+  `
+
 }
