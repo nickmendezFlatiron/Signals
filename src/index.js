@@ -123,7 +123,7 @@ function printToDOM(stockDataObj){
     <li class="list-group-item text-start" id="symbol"><span class="text-primary">Symbol </span> ${stockDataObj.Symbol}</li>
     <li class="list-group-item text-start" id="date"><span class="text-primary">Trading Day </span> ${stockDataObj.LatestTradingDay} </li>
     <li class="list-group-item text-start" id="price"><span class="text-primary">Price </span> ${stockDataObj.Price}</li>
-    <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change </span> $${stockDataObj.Change} <small class="text-secondary">${stockDataObj.ChangePercent}</small></li>
+    <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change </span> $${stockDataObj.Change} <small>${stockDataObj.ChangePercent}</small></li>
     <li class="list-group-item text-start" id="volume"><span class="text-primary">Volume </span> ${stockDataObj.Volume} Trades</li>
     <li class="list-group-item d-flex">
         <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
@@ -133,8 +133,8 @@ function printToDOM(stockDataObj){
     </div>
     </li>
   `
-  let price =  document.querySelector('#price-data')
-  let change = document.querySelector('#change-value-data')
+  let price =  document.querySelector('#price')
+  let change = document.querySelector('#change-value')
   console.log(stockDataObj.Change)
   if(stockDataObj.Change < 0) {
     price.classList.add('text-danger')
