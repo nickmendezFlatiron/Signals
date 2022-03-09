@@ -3,7 +3,7 @@ const searchbar = document.getElementById('searchbar')
 const searchMatches = document.getElementById('search-matches')
 const searchBtn = document.querySelector('#search-btn')
 let searchResultsMatches = [] ;
-
+let stockDataObj ;
 
 //EVENT LISTENERS
 
@@ -36,6 +36,7 @@ function fetchStockData(url){
   fetch(url)
     .then(res => res.json())
     .then(data => {organizeStockData(data)
+      printToDOM(stockDataObj)
     }) 
     
 }
@@ -89,7 +90,7 @@ function appendDisplay(e) {
 //organizes the stock data from the fetch request 
 // Fixes API JSON Object Keys from the fetch request and makes them usable for dot notation
 function organizeStockData(data) {
-  const stockDataObj = {} ;
+  stockDataObj = {} ;
   let dataArray = (Object.entries(data))[0][1]
   let dataArrayKeys = Object.keys(dataArray)
 
@@ -116,6 +117,14 @@ function camelCase (word) {
     return word;
 }
 
-// function printToDOM(dataKey){
-//   let li
-// }
+function printToDOM(stockDataObj){
+  let stockDataObjKeys = Object.keys(stockDataObj)
+  let ul = document.querySelector("#main-display-data")
+  stockDataObjKeys.forEach(dataKey => {
+    let li = document.createElement('li')
+    li.classList.add("list-group-item")
+    li.id = `${dataKey}`.toString()
+    li.innerText = `${dataKey} : ${stockDataObj[dataKey]}`
+    ul.prepend(li)
+  })
+}
