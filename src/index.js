@@ -4,6 +4,11 @@ const searchMatches = document.getElementById('search-matches')
 const searchBtn = document.querySelector('#search-btn')
 let searchResultsMatches = [] ;
 let stockDataObj ;
+const firstChart = createChart(firstContainer);
+
+
+//Imports Lightweight Charts from Tradingview
+import { createChart } from 'lightweight-charts';
 
 //EVENT LISTENERS
 
@@ -105,7 +110,6 @@ function organizeStockData(data) {
 
 //Prepends data of selected stock to the the main display
 function printToDOM(stockDataObj){
-  let stockDataObjKeys = Object.keys(stockDataObj)
   let ul = document.querySelector("#main-display-data")
   ul.innerHTML = `
     <li class="list-group-item text-start" id="symbol"><span class="text-primary">Symbol </span> ${stockDataObj.Symbol}</li>
@@ -133,7 +137,7 @@ function printToDOM(stockDataObj){
   }
 
   const chart = document.querySelector('#chart')
-  addChart(stockDataObj)
+  // addChart(stockDataObj)
 
 }
 
@@ -151,30 +155,5 @@ function camelCase (word) {
 }
 
 //grabs the appropriate chart from Tradingview
-function addChart(stockDataObj){
-  chart.innerHTML = `
-  <div class="tradingview-widget-container">
-  <div id="tradingview_fdacc"></div>
-  <div class="tradingview-widget"><span class="text-primary" id="chart-title">${stockDataObj.Symbol}Chart</span></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript" id="widget-script">
-  new TradingView.widget(
-  {
-  "width": 400,
-  "height": 300,
-  "symbol": "NASDAQ:${stockDataObj.Symbol}",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_fdacc"
-}
-  );
-  </script>
-</div>
-  `
-}
+// function addChart(stockDataObj){
+// }

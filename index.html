@@ -101,8 +101,12 @@
                     <li class="list-group-item d-flex">
                         <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
                     <div class="input-group">
-                      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="button-addon2">
-                      <button class="btn btn-primary" type="button" id="button-addon2">Buy/Sell</button>
+                      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="buy-sell-btn">
+          
+                      <select class="form-select btn-primary" id="buy-trade-btn">
+                        <option selected>Buy</option>
+                        <option value="2">Sell</option>
+                      </select>
                     </div>
                     </li>
                   </ul>
