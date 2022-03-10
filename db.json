@@ -1,25 +1,5 @@
 {
-  "watchlist" : [ 
-    { "name" : "Apple Inc." ,
-      "ticker" : "AAPL" , 
-      "type" : "Equity" ,
-      "region" : "United States" 
-    }  
-  
-  ] ,
-  "portfolio" : [ 
-    { "name" : "Apple Inc." ,
-      "quantity" : 3 , 
-      "avgPrice" : 100 
-    }  
-  ] ,
-  "trade-history" : [ 
-    { "quantity" : 3 ,
-      "ticker" : "AAPL" , 
-      "price" : 1000 ,
-      "transaction" : "sell" ,
-      "date" : "3-01-22"
-    }  
-  ]
-
+  "watchlist": [ ],
+  "portfolio": [],
+  "trade-history": []
 }

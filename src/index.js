@@ -2,7 +2,6 @@
 const searchbar = document.getElementById('searchbar')
 const searchMatches = document.getElementById('search-matches')
 const searchBtn = document.querySelector('#search-btn')
-const watchlistBtn = document.querySelector('#watchlist-btn')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 
@@ -28,7 +27,7 @@ function marketSearch(url)  {
       let bestMatchesArray = (Object.values(searchresults))[0]
       searchResultsMatches = []
       bestMatchesArray.map(bestMatch => simpleResults(bestMatch))
-      // console.log(searchResultsMatches[0].ticker)
+      
       appendResults(searchResultsMatches)
     })
 }
@@ -101,7 +100,7 @@ function organizeStockData(data) {
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-  console.log(stockDataObj)
+  // console.log(stockDataObj)
   
 }
 
@@ -128,7 +127,7 @@ function printToDOM(stockDataObj){
   `
   let price =  document.querySelector('#price')
   let change = document.querySelector('#change-value')
-  console.log(stockDataObj.Change)
+  // console.log(stockDataObj.Change)
   if(stockDataObj.Change < 0) {
     price.classList.add('text-danger')
     change.classList.add('text-danger')
@@ -136,22 +135,36 @@ function printToDOM(stockDataObj){
     price.classList.add('text-success')
     change.classList.add('text-success')
   }
- 
-  watchlistBtn.addEventListener('click', e => addToWatchlist(stockDataObj))
+  let watchlistBtn = document.querySelector('#watchlist-btn')
+  watchlistBtn.addEventListener('click', e => WatchlistListener(stockDataObj))
 }
 
 //adds Selected Stock to Watchlist 
-function addToWatchlist(stockDataObj) {
+function WatchlistListener(stockDataObj) {
+  watchlistBtn = document.querySelector('#watchlist-btn')
   console.log('I was clicked watchlist btn')
-  if (watchlistBtn.classList.contains('active')) {
+  if (!watchlistBtn.classList.contains('active')) {
     watchlistBtn.classList.remove('active') 
-    removeFromWatchlist(stockDataObj)
+    console.log("I am active watchlist btn")
+    // removeFromWatchlist(stockDataObj)
    } else { 
        watchlistBtn.classList.add('active')
        addToWatchlist(stockDataObj)
      }
 }
 
+
+function addToWatchlist (stockDataObj) {
+  fetch('http://localhost:3000/watchlist', {
+    method: 'POST' ,
+    headers: {
+      'Content-Type': 'application/json'
+    } ,
+    body: JSON.stringify(stockDataObj)
+  })
+  .then(res => res.json())
+  .then(stock => console.log(stock))
+}
 
 
 //UTLITY FUNCTIONS
@@ -166,6 +179,3 @@ function camelCase (word) {
     return word;
 }
 
-//grabs the appropriate chart from Tradingview
-// function addChart(stockDataObj){
-// }
