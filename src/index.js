@@ -15,9 +15,20 @@ searchBtn.addEventListener('click',e => {
   marketSearch(url)
 })
 
+//API FUNCTIONS
 
-
-//FUNCTIONS
+//adds stock to Watchlist by sending Post request to the local server-watchlist
+function addToWatchlist (stockDataObj) {
+  fetch('http://localhost:3000/watchlist', {
+    method: 'POST' ,
+    headers: {
+      'Content-Type': 'application/json'
+    } ,
+    body: JSON.stringify(stockDataObj)
+  })
+  .then(res => res.json())
+  .then(stock => console.log(stock))
+}
 
 //Alpha Vantage API search Results Best Matches
 function marketSearch(url)  {
@@ -42,6 +53,8 @@ function fetchStockData(url){
     
 }
 
+//FUNCTIONS
+
 //this function pushes a simplified object to the searchResultsMatches array for every best match found
 function simpleResults(bestMatch) {
   const bestMatchSimplified = Object.values(bestMatch)
@@ -61,7 +74,7 @@ function simpleResults(bestMatch) {
 
 //appends the top 5 search results to the DOM Search Results Container 
 function appendResults(searchResultsMatches) {
-  searchMatches.innerHTML = ``
+  searchMatches.innerHTML = `<h4 class="text-center text-primary">Search Results</h4>`
   let n  = 0
   searchResultsMatches.length < 5 ? n = searchResultsMatches.length : n = 5 ;
   for(let i = 0 ; i < n ; i++)
@@ -154,17 +167,6 @@ function WatchlistListener(stockDataObj) {
 }
 
 
-function addToWatchlist (stockDataObj) {
-  fetch('http://localhost:3000/watchlist', {
-    method: 'POST' ,
-    headers: {
-      'Content-Type': 'application/json'
-    } ,
-    body: JSON.stringify(stockDataObj)
-  })
-  .then(res => res.json())
-  .then(stock => console.log(stock))
-}
 
 
 //UTLITY FUNCTIONS
