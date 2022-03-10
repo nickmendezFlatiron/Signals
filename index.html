@@ -62,8 +62,32 @@
       <div class="row">
         <div class="col-md-8 mx-auto rounded-3 shadow-sm" id="information">
             <div class="row" id="asset-info">
-              <div class="col" id="chart">
-                
+              <div class="col d-flex justify-content-center" id="chart">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="tradingview_fdacc"></div>
+                  <div class="tradingview-widget"><span class="text-primary" id="chart-title">Chart</span></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript" id="widget-script">
+                  new TradingView.widget(
+                  {
+                  "width": 400,
+                  "height": 300,
+                  "symbol": "",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "dark",
+                  "style": "1",
+                  "locale": "en",
+                  "toolbar_bg": "#f1f3f6",
+                  "enable_publishing": false,
+                  "allow_symbol_change": true,
+                  "container_id": "tradingview_fdacc"
+                }
+                  );
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
               </div>
               <div class="col-md">
                 <div class="row-md">

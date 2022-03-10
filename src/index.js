@@ -152,5 +152,29 @@ function camelCase (word) {
 
 //grabs the appropriate chart from Tradingview
 function addChart(stockDataObj){
-  chart.innerHTML = ``
+  chart.innerHTML = `
+  <div class="tradingview-widget-container">
+  <div id="tradingview_fdacc"></div>
+  <div class="tradingview-widget"><span class="text-primary" id="chart-title">${stockDataObj.Symbol}Chart</span></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript" id="widget-script">
+  new TradingView.widget(
+  {
+  "width": 400,
+  "height": 300,
+  "symbol": "NASDAQ:${stockDataObj.Symbol}",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_fdacc"
+}
+  );
+  </script>
+</div>
+  `
 }
