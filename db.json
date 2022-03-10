@@ -1,32 +1,5 @@
 {
-  "watchlist": [
-    {
-      "Symbol": "TSLA",
-      "Open": "839.4800",
-      "High": "860.5600",
-      "Low": "832.0100",
-      "Price": "858.9700",
-      "Volume": "19727993",
-      "LatestTradingDay": "2022-03-09",
-      "PreviousClose": "824.4000",
-      "Change": "34.5700",
-      "ChangePercent": "4.1934%",
-      "id": 1
-    },
-    {
-      "Symbol": "AAPL",
-      "Open": "161.4750",
-      "High": "163.4100",
-      "Low": "159.4100",
-      "Price": "162.9500",
-      "Volume": "91454905",
-      "LatestTradingDay": "2022-03-09",
-      "PreviousClose": "157.4400",
-      "Change": "5.5100",
-      "ChangePercent": "3.4997%",
-      "id": 2
-    }
-  ],
+  "watchlist": [],
   "portfolio": [],
   "trade-history": []
 }
