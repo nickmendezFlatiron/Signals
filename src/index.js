@@ -2,13 +2,10 @@
 const searchbar = document.getElementById('searchbar')
 const searchMatches = document.getElementById('search-matches')
 const searchBtn = document.querySelector('#search-btn')
+const watchlistBtn = document.querySelector('#watchlist-btn')
 let searchResultsMatches = [] ;
 let stockDataObj ;
-const firstChart = createChart(firstContainer);
 
-
-//Imports Lightweight Charts from Tradingview
-import { createChart } from 'lightweight-charts';
 
 //EVENT LISTENERS
 
@@ -118,12 +115,16 @@ function printToDOM(stockDataObj){
     <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change </span> $${stockDataObj.Change} <small>${stockDataObj.ChangePercent}</small></li>
     <li class="list-group-item text-start" id="volume"><span class="text-primary">Volume </span> ${stockDataObj.Volume} Trades</li>
     <li class="list-group-item d-flex">
-        <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
-    <div class="input-group">
-      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="button-addon2">
-      <button class="btn btn-primary" type="button" id="button-addon2">Buy/Sell</button>
-    </div>
-    </li>
+    <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-btn">Watchlist</button>
+  <div class="input-group">
+    <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="trade-btn">
+
+    <select class="form-select btn-primary" id="trade-btn">
+      <option selected>Buy</option>
+      <option value="2">Sell</option>
+    </select>
+  </div>
+  </li>
   `
   let price =  document.querySelector('#price')
   let change = document.querySelector('#change-value')
@@ -135,11 +136,22 @@ function printToDOM(stockDataObj){
     price.classList.add('text-success')
     change.classList.add('text-success')
   }
-
-  const chart = document.querySelector('#chart')
-  // addChart(stockDataObj)
-
+ 
+  watchlistBtn.addEventListener('click', e => addToWatchlist(stockDataObj))
 }
+
+//adds Selected Stock to Watchlist 
+function addToWatchlist(stockDataObj) {
+  console.log('I was clicked watchlist btn')
+  if (watchlistBtn.classList.contains('active')) {
+    watchlistBtn.classList.remove('active') 
+    removeFromWatchlist(stockDataObj)
+   } else { 
+       watchlistBtn.classList.add('active')
+       addToWatchlist(stockDataObj)
+     }
+}
+
 
 
 //UTLITY FUNCTIONS

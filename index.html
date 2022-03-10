@@ -63,31 +63,6 @@
         <div class="col-md-8 mx-auto rounded-3 shadow-sm" id="information">
             <div class="row" id="asset-info">
               <div class="col d-flex justify-content-center" id="chart">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                  <div id="tradingview_fdacc"></div>
-                  <div class="tradingview-widget"><span class="text-primary" id="chart-title">Chart</span></div>
-                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                  <script type="text/javascript" id="widget-script">
-                  new TradingView.widget(
-                  {
-                  "width": 400,
-                  "height": 300,
-                  "symbol": "",
-                  "interval": "D",
-                  "timezone": "Etc/UTC",
-                  "theme": "dark",
-                  "style": "1",
-                  "locale": "en",
-                  "toolbar_bg": "#f1f3f6",
-                  "enable_publishing": false,
-                  "allow_symbol_change": true,
-                  "container_id": "tradingview_fdacc"
-                }
-                  );
-                  </script>
-                </div>
-                <!-- TradingView Widget END -->
               </div>
               <div class="col-md">
                 <div class="row-md">
@@ -99,7 +74,7 @@
                     <li class="list-group-item text-primary" id="percent-change">Change(%)</li>
                     <li class="list-group-item text-primary" id="volume">Volume</li>
                     <li class="list-group-item d-flex">
-                        <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-button">Watchlist</button>
+                        <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-btn">Watchlist</button>
                     <div class="input-group">
                       <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="buy-sell-btn">
           
