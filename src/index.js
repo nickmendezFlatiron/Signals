@@ -184,6 +184,7 @@ function appendWatchlist(watchlistObj) {
   toolboxDisplay.innerHTML = ''
   for (let object in watchlistObj) {
     let li = document.createElement('li')
+    li.classList.add('list-group-item' , 'text-start')
     li.innerText = `${object.Symbol} : $${object.Price}`
     toolboxDisplay.appendChild(li)
 }
