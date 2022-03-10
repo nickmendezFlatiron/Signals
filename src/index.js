@@ -181,12 +181,14 @@ function WatchlistListener(stockDataObj) {
 }
 
 function appendWatchlist(watchlistObj) {
-  toolboxDisplay.innerHTML = ''
-  for (let object in watchlistObj) {
+  toolboxDisplay.innerHTML = '<h4 class="text-center text-primary">WatchList</h4>'
+  for (let stock of watchlistObj) {
     let li = document.createElement('li')
     li.classList.add('list-group-item' , 'text-start')
-    li.innerText = `${object.Symbol} : $${object.Price}`
+    li.innerText = `${stock.Symbol} : $${stock.Price}`
     toolboxDisplay.appendChild(li)
+    // console.log(stock)
+    // console.log(watchlistObj)
 }
 }
 
