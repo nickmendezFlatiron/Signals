@@ -1,7 +1,8 @@
 //GLOBAL VARIABLES
 const searchbar = document.getElementById('searchbar')
-const searchMatches = document.getElementById('search-matches')
+const toolboxDisplay = document.getElementById('toolbox')
 const searchBtn = document.querySelector('#search-btn')
+const NavWatchlist = document.querySelector('#nav-watchlist')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 
@@ -13,6 +14,11 @@ searchBtn.addEventListener('click',e => {
   const searchbarValue = searchbar.value 
   let url = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchbarValue}&apikey=VXY7DLJ0XAQQON66`
   marketSearch(url)
+})
+
+NavWatchlist.addEventListener('click', e => {
+  e.preventDefault
+  fetchWatchlist()
 })
 
 //API FUNCTIONS
@@ -53,6 +59,14 @@ function fetchStockData(url){
     
 }
 
+function fetchWatchlist() {
+  fetch('http://localhost:3000/watchlist')
+  .then(res => res.json())
+  .then(watchlistObj => {
+      appendWatchlist(watchlistObj)
+  })
+
+}
 //FUNCTIONS
 
 //this function pushes a simplified object to the searchResultsMatches array for every best match found
@@ -74,7 +88,7 @@ function simpleResults(bestMatch) {
 
 //appends the top 5 search results to the DOM Search Results Container 
 function appendResults(searchResultsMatches) {
-  searchMatches.innerHTML = `<h4 class="text-center text-primary">Search Results</h4>`
+  toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">Search Results</h4>`
   let n  = 0
   searchResultsMatches.length < 5 ? n = searchResultsMatches.length : n = 5 ;
   for(let i = 0 ; i < n ; i++)
@@ -86,7 +100,7 @@ function appendResults(searchResultsMatches) {
     li.id = `${match.ticker}`
     li.innerHTML = `${match.name}<span class="text-primary"> (${match.ticker})</span>
     `
-    searchMatches.appendChild(li)
+    toolboxDisplay.appendChild(li)
     li.addEventListener('click', e => appendDisplay(e))
   }
 }
@@ -166,6 +180,14 @@ function WatchlistListener(stockDataObj) {
      }
 }
 
+function appendWatchlist(watchlistObj) {
+  toolboxDisplay.innerHTML = ''
+  for (let object in watchlistObj) {
+    let li = document.createElement('li')
+    li.innerText = `${object.Symbol} : $${object.Price}`
+    toolboxDisplay.appendChild(li)
+}
+}
 
 
 

@@ -1,5 +1,19 @@
 {
-  "watchlist": [],
+  "watchlist": [
+    {
+      "Symbol": "NVCT",
+      "Open": "8.0800",
+      "High": "8.5900",
+      "Low": "8.0000",
+      "Price": "8.2600",
+      "Volume": "170236",
+      "LatestTradingDay": "2022-03-10",
+      "PreviousClose": "8.4200",
+      "Change": "-0.1600",
+      "ChangePercent": "-1.9002%",
+      "id": 1
+    }
+  ],
   "portfolio": [],
   "trade-history": []
 }
