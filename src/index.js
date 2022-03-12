@@ -192,13 +192,11 @@ function appendWatchlist(watchlistObj) {
     toolboxDisplay.appendChild(li)   
   }
 
-
-  // FILTERS WATCHLIST FOR VALUES THAT CONTAIN THE SEARCH VALUE
 // watchlistFilter.addEventListener('input' , e => {
 //   filterWatchlist(watchlistObj)
 //   console.log(e.target.value)
 //   })
-// }
+}
 
 // function filterWatchlist(watchlistObj){
 //   const watchlistFilter = document.querySelector('#watchlist-filter')
