@@ -38,6 +38,19 @@
       "Change": "-4.4300",
       "ChangePercent": "-2.7186%",
       "id": 3
+    },
+    {
+      "Symbol": "GOOGL",
+      "Open": "2669.7700",
+      "High": "2675.9100",
+      "Low": "2592.6300",
+      "Price": "2597.4100",
+      "Volume": "1576322",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "2648.5900",
+      "Change": "-51.1800",
+      "ChangePercent": "-1.9323%",
+      "id": 4
     }
   ],
   "portfolio": [],

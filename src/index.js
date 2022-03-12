@@ -56,7 +56,6 @@ function fetchStockData(url){
     .then(data => {organizeStockData(data)
       printToDOM(stockDataObj)
     }) 
-    
 }
 
 function fetchWatchlist() {
@@ -65,8 +64,8 @@ function fetchWatchlist() {
   .then(watchlistObj => {
       appendWatchlist(watchlistObj)
   })
-
 }
+
 //FUNCTIONS
 
 //this function pushes a simplified object to the searchResultsMatches array for every best match found
@@ -137,8 +136,8 @@ function printToDOM(stockDataObj){
   ul.innerHTML = `
     <li class="list-group-item text-start" id="symbol"><span class="text-primary">Symbol </span> ${stockDataObj.Symbol}</li>
     <li class="list-group-item text-start" id="date"><span class="text-primary">Trading Day </span> ${stockDataObj.LatestTradingDay} </li>
-    <li class="list-group-item text-start" id="price"><span class="text-primary">Price </span> ${stockDataObj.Price}</li>
-    <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change </span> $${stockDataObj.Change} <small>${stockDataObj.ChangePercent}</small></li>
+    <li class="list-group-item text-start" id="price"><span class="text-primary">Price </span> $${roundNumber(stockDataObj.Price)}</li>
+    <li class="list-group-item text-start" id="change-value"><span class="text-primary">Change </span> $${roundNumber(stockDataObj.Change)} <small>${roundNumber(parseFloat(stockDataObj.ChangePercent,10))}%</small></li>
     <li class="list-group-item text-start" id="volume"><span class="text-primary">Volume </span> ${stockDataObj.Volume} Trades</li>
     <li class="list-group-item d-flex">
     <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-btn">Watchlist</button>
@@ -169,10 +168,8 @@ function printToDOM(stockDataObj){
 //adds Selected Stock to Watchlist 
 function WatchlistListener(stockDataObj) {
   watchlistBtn = document.querySelector('#watchlist-btn')
-  console.log('I was clicked watchlist btn')
   if (!watchlistBtn.classList.contains('active')) {
     watchlistBtn.classList.remove('active') 
-    console.log("I am active watchlist btn")
     // removeFromWatchlist(stockDataObj)
    } else { 
        watchlistBtn.classList.add('active')
@@ -181,21 +178,41 @@ function WatchlistListener(stockDataObj) {
 }
 
 function appendWatchlist(watchlistObj) {
-  toolboxDisplay.innerHTML = '<h4 class="text-center text-primary">WatchList</h4>'
+ 
+  toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">WatchList</h4>
+  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">
+  `
+  const watchlistFilter = document.querySelector('#watchlist-filter')
   for (let stock of watchlistObj) {
     let li = document.createElement('li')
+    li.id = stock.Symbol
     li.classList.add('list-group-item' , 'text-start')
-    li.innerText = `${stock.Symbol} : $${stock.Price}`
-    toolboxDisplay.appendChild(li)
-    // console.log(stock)
-    // console.log(watchlistObj)
-}
-}
+    li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
+    li.addEventListener('click', e => appendDisplay(e))
+    toolboxDisplay.appendChild(li)   
+  }
 
+
+  // FILTERS WATCHLIST FOR VALUES THAT CONTAIN THE SEARCH VALUE
+// watchlistFilter.addEventListener('input' , e => {
+//   filterWatchlist(watchlistObj)
+//   console.log(e.target.value)
+//   })
+// }
+
+// function filterWatchlist(watchlistObj){
+//   const watchlistFilter = document.querySelector('#watchlist-filter')
+//   watchlistObj.filter(stock => {
+//     let stockStr = stock.Symbol.toString()
+//     // console.log(stockStr)
+//     // console.log(watchlistFilter.value)
+//     return stockStr.includes(watchlistFilter.value)
+//   })
+
+// }
 
 
 //UTLITY FUNCTIONS
-
 //camelCases a string
 function camelCase (word) {
     word = word.split(" ");
@@ -206,3 +223,9 @@ function camelCase (word) {
     return word;
 }
 
+//Rounds a number to the nearest 2 decimal places
+function roundNumber (number){
+    const x = Math.pow(10,2)
+    return Math.round(number * x) / x;
+
+}
