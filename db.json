@@ -27,19 +27,6 @@
       "id": 2
     },
     {
-      "Symbol": "AAPL",
-      "Open": "160.2000",
-      "High": "160.3900",
-      "Low": "155.9800",
-      "Price": "158.5200",
-      "Volume": "100465687",
-      "LatestTradingDay": "2022-03-10",
-      "PreviousClose": "162.9500",
-      "Change": "-4.4300",
-      "ChangePercent": "-2.7186%",
-      "id": 3
-    },
-    {
       "Symbol": "GOOGL",
       "Open": "2669.7700",
       "High": "2675.9100",
@@ -129,6 +116,19 @@
       "Change": "-20.5000",
       "ChangePercent": "-1.9105%",
       "id": 10
+    },
+    {
+      "Symbol": "AAPL",
+      "Open": "158.9300",
+      "High": "159.2800",
+      "Low": "154.5000",
+      "Price": "154.7300",
+      "Volume": "96970102",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "158.5200",
+      "Change": "-3.7900",
+      "ChangePercent": "-2.3909%",
+      "id": 11
     }
   ],
   "portfolio": [],

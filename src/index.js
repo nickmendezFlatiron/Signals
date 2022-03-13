@@ -70,9 +70,9 @@ function fetchWatchlist(funct) {
   })
 }
 
-function removeFromWatchlist () {
-  fetch('http://localhost:3000/watchlist')
-  
+function removeFromWatchlist (id) {
+  fetch(`http://localhost:3000/watchlist/${id}`, { method: 'DELETE' })
+
 }
 
 //FUNCTIONS
@@ -178,7 +178,7 @@ function WatchlistListener(stockDataObj) {
   watchlistBtn = document.querySelector('#watchlist-btn')
   if (!watchlistBtn.classList.contains('active')) {
     watchlistBtn.classList.remove('active') 
-    // removeFromWatchlist(stockDataObj)
+    fetchWatchlist(existsInWatchlist)
    } else { 
        watchlistBtn.classList.add('active')
       //  console.log(stockDataObj)
@@ -209,6 +209,17 @@ function filterWatchlist(watchlistObj){
   })
 }
 
+//checks if the stock displayed exists in watchlist
+function existsInWatchlist(watchlistObj){
+  const duplicates = watchlistObj.filter(stock =>{
+     return stock.Symbol === stockDataObj.Symbol
+   })
+   if(duplicates.length === 0) {
+     addToWatchlist(stockDataObj)
+   } else if (duplicates.length === 1) {
+     removeFromWatchlist(duplicates[0].id)
+   }
+ }
 
 //UTLITY FUNCTIONS
 //camelCases a string
@@ -241,14 +252,7 @@ function makeWatchlistItems(watchlistObj) {
   }
 }
 
-function existsInWatchlist(watchlistObj){
- let duplicates = watchlistObj.filter(stock =>{
-    return stock.Symbol === stockDataObj.Symbol
-  })
-  if(duplicates.length === 0) {
-        addToWatchlist(stockDataObj)
-  }
-}
+
 
 
 
