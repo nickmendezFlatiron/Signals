@@ -20,7 +20,7 @@ searchBtn.addEventListener('click',e => {
 
 NavWatchlist.addEventListener('click', e => {
   e.preventDefault
-  fetchWatchlist()
+  fetchWatchlist(appendWatchlist)
 })
 
 
@@ -37,7 +37,7 @@ function addToWatchlist (stockDataObj) {
     body: JSON.stringify(stockDataObj)
   })
   .then(res => res.json())
-  .then(stock => console.log(stock))
+  // .then(stock => console.log(stock))
 }
 
 //Alpha Vantage API search Results Best Matches
@@ -62,12 +62,17 @@ function fetchStockData(url){
     }) 
 }
 
-function fetchWatchlist() {
+function fetchWatchlist(funct) {
   fetch('http://localhost:3000/watchlist')
   .then(res => res.json())
   .then(watchlistObj => {
-    appendWatchlist(watchlistObj)
+    funct(watchlistObj)
   })
+}
+
+function removeFromWatchlist () {
+  fetch('http://localhost:3000/watchlist')
+  
 }
 
 //FUNCTIONS
@@ -176,7 +181,8 @@ function WatchlistListener(stockDataObj) {
     // removeFromWatchlist(stockDataObj)
    } else { 
        watchlistBtn.classList.add('active')
-       addToWatchlist(stockDataObj)
+      //  console.log(stockDataObj)
+       fetchWatchlist(existsInWatchlist)
      }
 }
 
@@ -232,6 +238,15 @@ function makeWatchlistItems(watchlistObj) {
     li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
     li.addEventListener('click', e => appendDisplay(e))
     watchlistStocks.appendChild(li)   
+  }
+}
+
+function existsInWatchlist(watchlistObj){
+ let duplicates = watchlistObj.filter(stock =>{
+    return stock.Symbol === stockDataObj.Symbol
+  })
+  if(duplicates.length === 0) {
+        addToWatchlist(stockDataObj)
   }
 }
 
