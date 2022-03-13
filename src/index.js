@@ -170,9 +170,6 @@ function printToDOM(stockDataObj){
     change.classList.add('text-success')
   }
   let watchlistBtn = document.querySelector('#watchlist-btn')
-  if (fetchWatchlist(existsInWatchlist) === true) {
-    watchlistBtn.classList.add('active')
-  }
   watchlistBtn.addEventListener('click', e => WatchlistListener(stockDataObj))
 }
 
@@ -259,8 +256,8 @@ function existsInWatchlist(watchlistObj) {
   const duplicates = watchlistObj.filter(stock =>{
     return stock.Symbol === stockDataObj.Symbol
   })
-  console.log (duplicates.length === 1)
-  return (duplicates.length === 1) ? true : false ;
+  // console.log(duplicates.length === 1)
+  return (duplicates.length === 1)
 }
 
 
