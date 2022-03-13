@@ -170,6 +170,9 @@ function printToDOM(stockDataObj){
     change.classList.add('text-success')
   }
   let watchlistBtn = document.querySelector('#watchlist-btn')
+  if (fetchWatchlist(existsInWatchlist) === true) {
+    watchlistBtn.classList.add('active')
+  }
   watchlistBtn.addEventListener('click', e => WatchlistListener(stockDataObj))
 }
 
@@ -178,11 +181,11 @@ function WatchlistListener(stockDataObj) {
   watchlistBtn = document.querySelector('#watchlist-btn')
   if (!watchlistBtn.classList.contains('active')) {
     watchlistBtn.classList.remove('active') 
-    fetchWatchlist(existsInWatchlist)
+    fetchWatchlist(toggleWatchlist)
    } else { 
        watchlistBtn.classList.add('active')
       //  console.log(stockDataObj)
-       fetchWatchlist(existsInWatchlist)
+       fetchWatchlist(toggleWatchlist)
      }
 }
 
@@ -209,17 +212,17 @@ function filterWatchlist(watchlistObj){
   })
 }
 
-//checks if the stock displayed exists in watchlist
-function existsInWatchlist(watchlistObj){
-  const duplicates = watchlistObj.filter(stock =>{
-     return stock.Symbol === stockDataObj.Symbol
-   })
-   if(duplicates.length === 0) {
-     addToWatchlist(stockDataObj)
-   } else if (duplicates.length === 1) {
-     removeFromWatchlist(duplicates[0].id)
-   }
- }
+//adds or removes a stock from the watchlist
+function toggleWatchlist(watchlistObj){
+ const duplicates = watchlistObj.filter(stock =>{
+    return stock.Symbol === stockDataObj.Symbol
+  })
+  if(duplicates.length === 0) {
+    addToWatchlist(stockDataObj)
+  } else if (duplicates.length === 1) {
+    removeFromWatchlist(duplicates[0].id)
+  }
+}
 
 //UTLITY FUNCTIONS
 //camelCases a string
@@ -252,8 +255,13 @@ function makeWatchlistItems(watchlistObj) {
   }
 }
 
-
-
+function existsInWatchlist(watchlistObj) {
+  const duplicates = watchlistObj.filter(stock =>{
+    return stock.Symbol === stockDataObj.Symbol
+  })
+  console.log (duplicates.length === 1)
+  return (duplicates.length === 1) ? true : false ;
+}
 
 
 
