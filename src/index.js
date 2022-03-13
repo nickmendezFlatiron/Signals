@@ -6,6 +6,7 @@ const NavWatchlist = document.querySelector('#nav-watchlist')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 let watchlistFilter ;
+let watchlistStocks ;
 
 
 //EVENT LISTENERS
@@ -181,14 +182,15 @@ function WatchlistListener(stockDataObj) {
 
 function appendWatchlist(watchlistObj) {
   toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">WatchList</h4>
-  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">`
+  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">
+  <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center " id="watchlist-stocks"></ul>
+  `
   watchlistFilter = document.querySelector('#watchlist-filter')
+  watchlistStocks = document.querySelector('#watchlist-stocks')
   makeWatchlistItems(watchlistObj)
   watchlistFilter.addEventListener('input',e => {
     const filterList = filterWatchlist(watchlistObj)
-    const printList = makeWatchlistItems(filterList)
-    console.log(printList)
-    // appendWatchlist()
+    makeWatchlistItems(filterList)
     })
   
 }
@@ -197,11 +199,8 @@ function appendWatchlist(watchlistObj) {
 function filterWatchlist(watchlistObj){
  return watchlistObj.filter(stock => {
     let stockStr = stock.Symbol.toString()
-    console.log(stockStr)
-    console.log(watchlistFilter.value.toUpperCase())
     return stockStr.includes(watchlistFilter.value.toUpperCase())
   })
-
 }
 
 
@@ -223,15 +222,16 @@ function roundNumber (number){
 
 }
 
-//
+//inserts the Watchlist stocks into the DOM
 function makeWatchlistItems(watchlistObj) {
+  watchlistStocks.innerHTML = ''
   for (let stock of watchlistObj) {
     let li = document.createElement('li')
     li.id = stock.Symbol
     li.classList.add('list-group-item' , 'text-start')
     li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
     li.addEventListener('click', e => appendDisplay(e))
-    toolboxDisplay.appendChild(li)   
+    watchlistStocks.appendChild(li)   
   }
 }
 
