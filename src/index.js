@@ -5,6 +5,7 @@ const searchBtn = document.querySelector('#search-btn')
 const NavWatchlist = document.querySelector('#nav-watchlist')
 let searchResultsMatches = [] ;
 let stockDataObj ;
+let watchlistFilter ;
 
 
 //EVENT LISTENERS
@@ -20,6 +21,8 @@ NavWatchlist.addEventListener('click', e => {
   e.preventDefault
   fetchWatchlist()
 })
+
+
 
 //API FUNCTIONS
 
@@ -62,7 +65,7 @@ function fetchWatchlist() {
   fetch('http://localhost:3000/watchlist')
   .then(res => res.json())
   .then(watchlistObj => {
-      appendWatchlist(watchlistObj)
+    appendWatchlist(watchlistObj)
   })
 }
 
@@ -97,8 +100,7 @@ function appendResults(searchResultsMatches) {
     
     li.classList.add('list-group-item')
     li.id = `${match.ticker}`
-    li.innerHTML = `${match.name}<span class="text-primary"> (${match.ticker})</span>
-    `
+    li.innerHTML = `${match.name}<span class="text-primary"> (${match.ticker})</span>`
     toolboxDisplay.appendChild(li)
     li.addEventListener('click', e => appendDisplay(e))
   }
@@ -178,36 +180,29 @@ function WatchlistListener(stockDataObj) {
 }
 
 function appendWatchlist(watchlistObj) {
- 
   toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">WatchList</h4>
-  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">
-  `
-  const watchlistFilter = document.querySelector('#watchlist-filter')
-  for (let stock of watchlistObj) {
-    let li = document.createElement('li')
-    li.id = stock.Symbol
-    li.classList.add('list-group-item' , 'text-start')
-    li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
-    li.addEventListener('click', e => appendDisplay(e))
-    toolboxDisplay.appendChild(li)   
-  }
-
-// watchlistFilter.addEventListener('input' , e => {
-//   filterWatchlist(watchlistObj)
-//   console.log(e.target.value)
-//   })
+  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">`
+  watchlistFilter = document.querySelector('#watchlist-filter')
+  makeWatchlistItems(watchlistObj)
+  watchlistFilter.addEventListener('input',e => {
+    const filterList = filterWatchlist(watchlistObj)
+    const printList = makeWatchlistItems(filterList)
+    console.log(printList)
+    // appendWatchlist()
+    })
+  
 }
 
-// function filterWatchlist(watchlistObj){
-//   const watchlistFilter = document.querySelector('#watchlist-filter')
-//   watchlistObj.filter(stock => {
-//     let stockStr = stock.Symbol.toString()
-//     // console.log(stockStr)
-//     // console.log(watchlistFilter.value)
-//     return stockStr.includes(watchlistFilter.value)
-//   })
+//Filters out all Watchlist stocks that do not contain the string input from filter bar
+function filterWatchlist(watchlistObj){
+ return watchlistObj.filter(stock => {
+    let stockStr = stock.Symbol.toString()
+    console.log(stockStr)
+    console.log(watchlistFilter.value.toUpperCase())
+    return stockStr.includes(watchlistFilter.value.toUpperCase())
+  })
 
-// }
+}
 
 
 //UTLITY FUNCTIONS
@@ -227,3 +222,20 @@ function roundNumber (number){
     return Math.round(number * x) / x;
 
 }
+
+//
+function makeWatchlistItems(watchlistObj) {
+  for (let stock of watchlistObj) {
+    let li = document.createElement('li')
+    li.id = stock.Symbol
+    li.classList.add('list-group-item' , 'text-start')
+    li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
+    li.addEventListener('click', e => appendDisplay(e))
+    toolboxDisplay.appendChild(li)   
+  }
+}
+
+
+
+
+
