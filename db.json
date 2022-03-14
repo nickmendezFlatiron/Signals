@@ -14,6 +14,58 @@
       "id": 1
     },
     {
+      "Symbol": "MSFT",
+      "Open": "287.9600",
+      "High": "289.5100",
+      "Low": "279.4300",
+      "Price": "280.0700",
+      "Volume": "27209330",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "285.5900",
+      "Change": "-5.5200",
+      "ChangePercent": "-1.9328%",
+      "id": 3
+    },
+    {
+      "Symbol": "W",
+      "Open": "123.2200",
+      "High": "124.9900",
+      "Low": "113.7752",
+      "Price": "114.4500",
+      "Volume": "2582315",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "120.7300",
+      "Change": "-6.2800",
+      "ChangePercent": "-5.2017%",
+      "id": 4
+    },
+    {
+      "Symbol": "NVCT",
+      "Open": "7.7000",
+      "High": "8.3000",
+      "Low": "7.6500",
+      "Price": "8.2700",
+      "Volume": "123751",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "8.2600",
+      "Change": "0.0100",
+      "ChangePercent": "0.1211%",
+      "id": 5
+    },
+    {
+      "Symbol": "RE",
+      "Open": "275.9000",
+      "High": "277.5450",
+      "Low": "271.1900",
+      "Price": "271.4100",
+      "Volume": "282208",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "273.7900",
+      "Change": "-2.3800",
+      "ChangePercent": "-0.8693%",
+      "id": 6
+    },
+    {
       "Symbol": "TSLA",
       "Open": "840.1970",
       "High": "843.8020",
@@ -24,7 +76,7 @@
       "PreviousClose": "838.3000",
       "Change": "-42.9500",
       "ChangePercent": "-5.1235%",
-      "id": 2
+      "id": 7
     }
   ],
   "portfolio": [],

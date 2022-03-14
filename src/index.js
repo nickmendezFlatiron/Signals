@@ -62,6 +62,7 @@ function fetchStockData(url){
     }) 
 }
 
+// fetches local db watchlist data
 function fetchWatchlist(funct) {
   fetch('http://localhost:3000/watchlist')
   .then(res => res.json())
@@ -70,8 +71,10 @@ function fetchWatchlist(funct) {
   })
 }
 
-function removeFromWatchlist (id) {
-  fetch(`http://localhost:3000/watchlist/${id}`, { method: 'DELETE' })
+
+
+function removeFromDb (db,id) {
+  fetch(`http://localhost:3000/${db}/${id}`, { method: 'DELETE' })
 }
 
 //FUNCTIONS
@@ -226,7 +229,7 @@ function toggleWatchlist(watchlistObj){
   if(duplicates.length === 0) {
     addToWatchlist(stockDataObj)
   } else if (duplicates.length === 1) {
-    removeFromWatchlist(duplicates[0].id)
+    removeFromDb("watchlist",duplicates[0].id)
   }
 }
 
