@@ -72,7 +72,6 @@ function fetchWatchlist(funct) {
 
 function removeFromWatchlist (id) {
   fetch(`http://localhost:3000/watchlist/${id}`, { method: 'DELETE' })
-
 }
 
 //FUNCTIONS
@@ -134,7 +133,6 @@ function organizeStockData(data) {
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-  // console.log(stockDataObj)
   
 }
 
@@ -169,8 +167,19 @@ function printToDOM(stockDataObj){
     price.classList.add('text-success')
     change.classList.add('text-success')
   }
-  let watchlistBtn = document.querySelector('#watchlist-btn')
+  const watchlistBtn = document.querySelector('#watchlist-btn')
   watchlistBtn.addEventListener('click', e => WatchlistListener(stockDataObj))
+  
+  //sets watchlist button to active if the stock exists in the Watchlist
+  function existsInWatchlist(watchlistObj) {
+    const duplicates = watchlistObj.filter(stock => {
+      return stock.Symbol === stockDataObj.Symbol
+    })
+    // console.log(duplicates[0].Symbol)
+    duplicates.length === 1 ? watchlistBtn.classList.add('active') : false ;
+  }
+  fetchWatchlist(existsInWatchlist)
+  
 }
 
 //adds Selected Stock to Watchlist 
@@ -252,13 +261,7 @@ function makeWatchlistItems(watchlistObj) {
   }
 }
 
-function existsInWatchlist(watchlistObj) {
-  const duplicates = watchlistObj.filter(stock =>{
-    return stock.Symbol === stockDataObj.Symbol
-  })
-  // console.log(duplicates.length === 1)
-  return (duplicates.length === 1)
-}
+
 
 
 
