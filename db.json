@@ -1,32 +1,6 @@
 {
   "watchlist": [
     {
-      "Symbol": "AAPL",
-      "Open": "158.9300",
-      "High": "159.2800",
-      "Low": "154.5000",
-      "Price": "154.7300",
-      "Volume": "96970102",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "158.5200",
-      "Change": "-3.7900",
-      "ChangePercent": "-2.3909%",
-      "id": 1
-    },
-    {
-      "Symbol": "MSFT",
-      "Open": "287.9600",
-      "High": "289.5100",
-      "Low": "279.4300",
-      "Price": "280.0700",
-      "Volume": "27209330",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "285.5900",
-      "Change": "-5.5200",
-      "ChangePercent": "-1.9328%",
-      "id": 3
-    },
-    {
       "Symbol": "W",
       "Open": "123.2200",
       "High": "124.9900",
@@ -38,19 +12,6 @@
       "Change": "-6.2800",
       "ChangePercent": "-5.2017%",
       "id": 4
-    },
-    {
-      "Symbol": "NVCT",
-      "Open": "7.7000",
-      "High": "8.3000",
-      "Low": "7.6500",
-      "Price": "8.2700",
-      "Volume": "123751",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "8.2600",
-      "Change": "0.0100",
-      "ChangePercent": "0.1211%",
-      "id": 5
     },
     {
       "Symbol": "RE",
@@ -77,6 +38,45 @@
       "Change": "-42.9500",
       "ChangePercent": "-5.1235%",
       "id": 7
+    },
+    {
+      "Symbol": "NVCT",
+      "Open": "7.7000",
+      "High": "8.3000",
+      "Low": "7.6500",
+      "Price": "8.2700",
+      "Volume": "123751",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "8.2600",
+      "Change": "0.0100",
+      "ChangePercent": "0.1211%",
+      "id": 8
+    },
+    {
+      "Symbol": "AAPL",
+      "Open": "158.9300",
+      "High": "159.2800",
+      "Low": "154.5000",
+      "Price": "154.7300",
+      "Volume": "96970102",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "158.5200",
+      "Change": "-3.7900",
+      "ChangePercent": "-2.3909%",
+      "id": 9
+    },
+    {
+      "Symbol": "MSFT",
+      "Open": "287.9600",
+      "High": "289.5100",
+      "Low": "279.4300",
+      "Price": "280.0700",
+      "Volume": "27209330",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "285.5900",
+      "Change": "-5.5200",
+      "ChangePercent": "-1.9328%",
+      "id": 10
     }
   ],
   "portfolio": [],

@@ -171,7 +171,8 @@ function printToDOM(stockDataObj){
     change.classList.add('text-success')
   }
   const watchlistBtn = document.querySelector('#watchlist-btn')
-  watchlistBtn.addEventListener('click', e => WatchlistListener(stockDataObj))
+  watchlistBtn.addEventListener('click', e => {WatchlistListener(stockDataObj)}
+  )
   
   //sets watchlist button to active if the stock exists in the Watchlist
   function existsInWatchlist(watchlistObj) {
