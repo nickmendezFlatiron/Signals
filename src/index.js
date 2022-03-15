@@ -2,7 +2,8 @@
 const searchbar = document.getElementById('searchbar')
 const toolboxDisplay = document.getElementById('toolbox')
 const searchBtn = document.querySelector('#search-btn')
-const NavWatchlist = document.querySelector('#nav-watchlist')
+const navWatchlist = document.querySelector('#nav-watchlist')
+const navSearchResults = document.querySelector('#nav-search-results')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 let watchlistFilter ;
@@ -18,9 +19,16 @@ searchBtn.addEventListener('click',e => {
   marketSearch(url)
 })
 
-NavWatchlist.addEventListener('click', e => {
+navWatchlist.addEventListener('click', e => {
   e.preventDefault
   fetchDatabase('watchlist',appendWatchlist)
+})
+
+navSearchResults.addEventListener('click', e =>{
+  e.preventDefault()
+  const searchbarValue = searchbar.value 
+  let url = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchbarValue}&apikey=VXY7DLJ0XAQQON66`
+  marketSearch(url)
 })
 
 //API Requests
@@ -192,7 +200,7 @@ function printToDOM(stockDataObj){
 
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
       updateTradeHistory(newTrade) 
-      alert(`${newTrade.symbol} ${camelCase(newTrade.type)} successfully executed`)
+      alert(`${newTrade.symbol} ${camelCase(newTrade.type)} of ${newTrade.quantity} shares successfully executed`)
       e.target.value = "" 
       } else if (e.key ==='Enter' && (Number.isInteger(Number(e.target.value)) || e.target.value > 0))
       {alert('Enter an integer greater than 0')}

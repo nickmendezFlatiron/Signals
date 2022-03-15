@@ -27,19 +27,6 @@
       "id": 6
     },
     {
-      "Symbol": "TSLA",
-      "Open": "840.1970",
-      "High": "843.8020",
-      "Low": "793.7700",
-      "Price": "795.3500",
-      "Volume": "22345722",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "838.3000",
-      "Change": "-42.9500",
-      "ChangePercent": "-5.1235%",
-      "id": 7
-    },
-    {
       "Symbol": "NVCT",
       "Open": "7.7000",
       "High": "8.3000",
@@ -77,8 +64,51 @@
       "Change": "-1.4300",
       "ChangePercent": "-7.2405%",
       "id": 12
+    },
+    {
+      "Symbol": "TR",
+      "Open": "33.2400",
+      "High": "33.5700",
+      "Low": "32.8000",
+      "Price": "33.1400",
+      "Volume": "153403",
+      "LatestTradingDay": "2022-03-14",
+      "PreviousClose": "33.0100",
+      "Change": "0.1300",
+      "ChangePercent": "0.3938%",
+      "id": 13
+    },
+    {
+      "Symbol": "FB",
+      "Open": "187.0300",
+      "High": "192.2900",
+      "Low": "185.8200",
+      "Price": "186.6300",
+      "Volume": "31010462",
+      "LatestTradingDay": "2022-03-14",
+      "PreviousClose": "187.6100",
+      "Change": "-0.9800",
+      "ChangePercent": "-0.5224%",
+      "id": 14
     }
   ],
   "portfolio": [],
-  "trade-history": []
+  "trade-history": [
+    {
+      "price": "276.4400",
+      "date": "Tue Mar 15 2022 00:34:31 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "MSFT",
+      "type": "sell",
+      "quantity": "100",
+      "id": 1
+    },
+    {
+      "price": "9.1000",
+      "date": "Tue Mar 15 2022 00:37:34 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "buy",
+      "quantity": "31",
+      "id": 2
+    }
+  ]
 }
