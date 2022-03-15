@@ -53,19 +53,6 @@
       "id": 8
     },
     {
-      "Symbol": "AAPL",
-      "Open": "158.9300",
-      "High": "159.2800",
-      "Low": "154.5000",
-      "Price": "154.7300",
-      "Volume": "96970102",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "158.5200",
-      "Change": "-3.7900",
-      "ChangePercent": "-2.3909%",
-      "id": 9
-    },
-    {
       "Symbol": "MSFT",
       "Open": "287.9600",
       "High": "289.5100",
@@ -77,6 +64,32 @@
       "Change": "-5.5200",
       "ChangePercent": "-1.9328%",
       "id": 10
+    },
+    {
+      "Symbol": "TEAF",
+      "Open": "14.2800",
+      "High": "14.2800",
+      "Low": "14.0550",
+      "Price": "14.0700",
+      "Volume": "43060",
+      "LatestTradingDay": "2022-03-14",
+      "PreviousClose": "14.1900",
+      "Change": "-0.1200",
+      "ChangePercent": "-0.8457%",
+      "id": 11
+    },
+    {
+      "Symbol": "RDFN",
+      "Open": "19.9900",
+      "High": "20.1300",
+      "Low": "18.2800",
+      "Price": "18.3200",
+      "Volume": "1251846",
+      "LatestTradingDay": "2022-03-11",
+      "PreviousClose": "19.7500",
+      "Change": "-1.4300",
+      "ChangePercent": "-7.2405%",
+      "id": 12
     }
   ],
   "portfolio": [],

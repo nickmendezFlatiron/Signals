@@ -171,7 +171,7 @@ function printToDOM(stockDataObj){
     change.classList.add('text-success')
   }
   const watchlistBtn = document.querySelector('#watchlist-btn')
-  watchlistBtn.addEventListener('click', e => {WatchlistListener(stockDataObj)}
+  watchlistBtn.addEventListener('click', e => {WatchlistListener()}
   )
   
   //sets watchlist button to active if the stock exists in the Watchlist
@@ -183,7 +183,6 @@ function printToDOM(stockDataObj){
     duplicates.length === 1 ? watchlistBtn.classList.add('active') : false ;
   }
   fetchWatchlist(existsInWatchlist)
-  
 }
 
 //adds Selected Stock to Watchlist 
@@ -202,7 +201,7 @@ function WatchlistListener(stockDataObj) {
 function appendWatchlist(watchlistObj) {
   toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">WatchList</h4>
   <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">
-  <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center " id="watchlist-stocks"></ul>
+  <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center overflow-auto" id="watchlist-stocks"></ul>
   `
   watchlistFilter = document.querySelector('#watchlist-filter')
   watchlistStocks = document.querySelector('#watchlist-stocks')
