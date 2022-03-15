@@ -80,14 +80,5 @@
     }
   ],
   "portfolio": [],
-  "trade-history": [
-    {
-      "price": "9.1000",
-      "date": "Mon Mar 14 2022 23:56:04 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "buy",
-      "quantity": "2",
-      "id": 1
-    }
-  ]
+  "trade-history": []
 }

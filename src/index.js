@@ -190,10 +190,15 @@ function printToDOM(stockDataObj){
     newTrade.type = tradeOptions.value.toString()
     newTrade.quantity = e.target.value
 
-    if(e.key === 'Enter')
-    {Number.isInteger(Number(e.target.value)) && e.target.value > 0 ? updateTradeHistory(newTrade) : alert('Please enter an integer greater than 0');}
+    if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
+      updateTradeHistory(newTrade) 
+      alert(`${newTrade.symbol} ${camelCase(newTrade.type)} successfully executed`)
+      e.target.value = "" 
+      } else if (e.key ==='Enter' && (Number.isInteger(Number(e.target.value)) || e.target.value > 0))
+      {alert('Enter an integer greater than 0')}
+
     
-  })
+    })
   //sets watchlist button to active if the stock exists in the Watchlist
   function existsInWatchlist(watchlistObj) {
     const duplicates = watchlistObj.filter(stock => {
