@@ -269,8 +269,17 @@ function toggleWatchlist(watchlistObj){
 
 
 //appends trade hsitory to the DOM
-function appendTradeHistory(){
-
+function appendTradeHistory(watchlistObj){
+  const tradeTableBody = document.querySelector('#trade-history-body')
+  let tr = document.createElement('tr')
+  
+  //   <tr>
+  //   <th scope="row">1</th>
+  //   <td>Mark</td>
+  //   <td>Otto</td>
+  //   <td>@mdo</td>
+  // </tr>
+  tradeTableBody.appendChild(tr)
 }
 
 //UTLITY FUNCTIONS
