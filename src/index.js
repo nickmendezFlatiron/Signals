@@ -200,10 +200,10 @@ function printToDOM(stockDataObj){
 
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
       updateTradeHistory(newTrade) 
-      alert(`${newTrade.symbol} ${camelCase(newTrade.type)} of ${newTrade.quantity} shares successfully executed`)
+      alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
       e.target.value = "" 
       } else if (e.key ==='Enter' && (Number.isInteger(Number(e.target.value)) || e.target.value > 0))
-      {alert('Enter an integer greater than 0')}
+      {alert('Execution Failed: Must enter an integer greater than 0')}
 
     
     })

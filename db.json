@@ -53,19 +53,6 @@
       "id": 10
     },
     {
-      "Symbol": "RDFN",
-      "Open": "19.9900",
-      "High": "20.1300",
-      "Low": "18.2800",
-      "Price": "18.3200",
-      "Volume": "1251846",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "19.7500",
-      "Change": "-1.4300",
-      "ChangePercent": "-7.2405%",
-      "id": 12
-    },
-    {
       "Symbol": "TR",
       "Open": "33.2400",
       "High": "33.5700",
@@ -90,6 +77,32 @@
       "Change": "-0.9800",
       "ChangePercent": "-0.5224%",
       "id": 14
+    },
+    {
+      "Symbol": "AAPL",
+      "Open": "151.4500",
+      "High": "154.1200",
+      "Low": "150.1000",
+      "Price": "150.6200",
+      "Volume": "108732111",
+      "LatestTradingDay": "2022-03-14",
+      "PreviousClose": "154.7300",
+      "Change": "-4.1100",
+      "ChangePercent": "-2.6562%",
+      "id": 15
+    },
+    {
+      "Symbol": "BARK",
+      "Open": "2.8700",
+      "High": "3.0900",
+      "Low": "2.7200",
+      "Price": "2.7200",
+      "Volume": "2974839",
+      "LatestTradingDay": "2022-03-14",
+      "PreviousClose": "2.8700",
+      "Change": "-0.1500",
+      "ChangePercent": "-5.2265%",
+      "id": 16
     }
   ],
   "portfolio": [],
@@ -109,6 +122,22 @@
       "type": "buy",
       "quantity": "31",
       "id": 2
+    },
+    {
+      "price": "272.0100",
+      "date": "Tue Mar 15 2022 13:31:38 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "RE",
+      "type": "sell",
+      "quantity": "12",
+      "id": 3
+    },
+    {
+      "price": "9.1000",
+      "date": "Tue Mar 15 2022 13:33:04 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "sell",
+      "quantity": "15",
+      "id": 4
     }
   ]
 }
