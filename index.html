@@ -11,7 +11,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-bar">
     <!--Navigation bar at top-->
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/Signals.png" width="110px" ></a>
@@ -45,7 +45,7 @@
       </div>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-1 d-flex" id="search-form">
-        <input type="search" class="form-control" placeholder="Search Markets Here" aria-label="Search" id="searchbar">
+        <input type="search" class="form-control " placeholder="Search Markets Here" aria-label="Search" id="searchbar">
         <button type="submit" class="btn btn-primary" id="search-btn">
           <i class="bi bi-search"></i>
         </button>
@@ -96,11 +96,10 @@
                     <li class="list-group-item d-flex">
                         <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-btn">Watchlist</button>
                     <div class="input-group">
-                      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="buy-sell-btn">
-          
-                      <select class="form-select btn-primary" id="buy-trade-btn">
-                        <option selected>Buy</option>
-                        <option value="2">Sell</option>
+                      <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="trade-options" id="trade-quantity">
+                      <select class="form-select btn-primary" id="trade-options">
+                        <option selected value="buy">Buy</option>
+                        <option value="sell">Sell</option>
                       </select>
                     </div>
                     </li>
@@ -110,8 +109,14 @@
             </div>
         </div>
         <div class="col-lg rounded-3 shadow-sm overflow-auto" id="alerts">
-          <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center" id="toolbox">
-
+          <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center align-top" id="toolbox">
+           <h4 class="text-primary text-center"><i class="bi bi-tools"></i> Toolbox <i class="bi bi-tools"></i></h4>
+           <p>If this is your first time using Signals, please use the input box above to search the Stock Market and get started.
+             <br>
+              Information accessed by a specific tool from your Toolbox dropdown menu is displayed here.
+              <br>
+              Submitting a search will automatically populate this area with the top 5 search results.
+            </p>
           </ul>
         </div>
       </div>

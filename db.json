@@ -66,19 +66,6 @@
       "id": 10
     },
     {
-      "Symbol": "TEAF",
-      "Open": "14.2800",
-      "High": "14.2800",
-      "Low": "14.0550",
-      "Price": "14.0700",
-      "Volume": "43060",
-      "LatestTradingDay": "2022-03-14",
-      "PreviousClose": "14.1900",
-      "Change": "-0.1200",
-      "ChangePercent": "-0.8457%",
-      "id": 11
-    },
-    {
       "Symbol": "RDFN",
       "Open": "19.9900",
       "High": "20.1300",
@@ -93,5 +80,14 @@
     }
   ],
   "portfolio": [],
-  "trade-history": []
+  "trade-history": [
+    {
+      "price": "9.1000",
+      "date": "Mon Mar 14 2022 23:56:04 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "buy",
+      "quantity": "2",
+      "id": 1
+    }
+  ]
 }

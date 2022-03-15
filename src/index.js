@@ -20,12 +20,10 @@ searchBtn.addEventListener('click',e => {
 
 NavWatchlist.addEventListener('click', e => {
   e.preventDefault
-  fetchWatchlist(appendWatchlist)
+  fetchDatabase('watchlist',appendWatchlist)
 })
 
-
-
-//API FUNCTIONS
+//API Requests
 
 //adds stock to Watchlist by sending Post request to the local server-watchlist
 function addToWatchlist (stockDataObj) {
@@ -63,16 +61,26 @@ function fetchStockData(url){
 }
 
 // fetches local db watchlist data
-function fetchWatchlist(funct) {
-  fetch('http://localhost:3000/watchlist')
+function fetchDatabase(db,funct) {
+  fetch(`http://localhost:3000/${db}`)
   .then(res => res.json())
   .then(watchlistObj => {
     funct(watchlistObj)
   })
 }
 
+function updateTradeHistory (newTrade) {
+  fetch('http://localhost:3000/trade-history', {
+    method: 'POST' ,
+    headers: {
+      'Content-Type': 'application/json'
+    } ,
+    body: JSON.stringify(newTrade)
+  })
+}
 
 
+//removes an element from a selected database
 function removeFromDb (db,id) {
   fetch(`http://localhost:3000/${db}/${id}`, { method: 'DELETE' })
 }
@@ -151,11 +159,10 @@ function printToDOM(stockDataObj){
     <li class="list-group-item d-flex">
     <button type="button" class="btn btn-outline-primary col" data-bs-toggle="button" id="watchlist-btn">Watchlist</button>
   <div class="input-group">
-    <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="trade-btn">
-
-    <select class="form-select btn-primary" id="trade-btn">
-      <option selected>Buy</option>
-      <option value="2">Sell</option>
+    <input type="text" class="form-control col" placeholder="Quantity" aria-label="Buy-Sell" aria-describedby="trade-options" id="trade-quantity">
+    <select class="form-select btn-primary" id="trade-options">
+      <option selected value="buy">Buy</option>
+      <option value="sell">Sell</option>
     </select>
   </div>
   </li>
@@ -173,7 +180,20 @@ function printToDOM(stockDataObj){
   const watchlistBtn = document.querySelector('#watchlist-btn')
   watchlistBtn.addEventListener('click', e => {WatchlistListener()}
   )
-  
+  const tradeOptions = document.querySelector("#trade-options")
+  const tradeQuantity = document.querySelector("#trade-quantity")
+  tradeQuantity.addEventListener('keypress', e =>{
+    let newTrade = {}
+    newTrade.price = stockDataObj.Price
+    newTrade.date = Date().toString()
+    newTrade.symbol = stockDataObj.Symbol
+    newTrade.type = tradeOptions.value.toString()
+    newTrade.quantity = e.target.value
+
+    if(e.key === 'Enter')
+    {Number.isInteger(Number(e.target.value)) && e.target.value > 0 ? updateTradeHistory(newTrade) : alert('Please enter an integer greater than 0');}
+    
+  })
   //sets watchlist button to active if the stock exists in the Watchlist
   function existsInWatchlist(watchlistObj) {
     const duplicates = watchlistObj.filter(stock => {
@@ -182,7 +202,7 @@ function printToDOM(stockDataObj){
     // console.log(duplicates[0].Symbol)
     duplicates.length === 1 ? watchlistBtn.classList.add('active') : false ;
   }
-  fetchWatchlist(existsInWatchlist)
+  fetchDatabase('watchlist',existsInWatchlist)
 }
 
 //adds Selected Stock to Watchlist 
@@ -190,11 +210,11 @@ function WatchlistListener(stockDataObj) {
   watchlistBtn = document.querySelector('#watchlist-btn')
   if (!watchlistBtn.classList.contains('active')) {
     watchlistBtn.classList.remove('active') 
-    fetchWatchlist(toggleWatchlist)
+    fetchDatabase('watchlist',toggleWatchlist)
    } else { 
        watchlistBtn.classList.add('active')
       //  console.log(stockDataObj)
-       fetchWatchlist(toggleWatchlist)
+       fetchDatabase("watchlist",toggleWatchlist)
      }
 }
 
@@ -263,8 +283,6 @@ function makeWatchlistItems(watchlistObj) {
     watchlistStocks.appendChild(li)   
   }
 }
-
-
 
 
 
