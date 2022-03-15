@@ -88,7 +88,7 @@ function updateTradeHistory (newTrade) {
 }
 
 
-//removes an element from a selected database
+//removes an id from a selected database
 function removeFromDb (db,id) {
   fetch(`http://localhost:3000/${db}/${id}`, { method: 'DELETE' })
 }
@@ -202,6 +202,7 @@ function printToDOM(stockDataObj){
       updateTradeHistory(newTrade) 
       alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
       e.target.value = "" 
+
       } else if (e.key ==='Enter' && (Number.isInteger(Number(e.target.value)) || e.target.value > 0))
       {alert('Execution Failed: Must enter an integer greater than 0')}
 
@@ -264,6 +265,12 @@ function toggleWatchlist(watchlistObj){
   } else if (duplicates.length === 1) {
     removeFromDb("watchlist",duplicates[0].id)
   }
+}
+
+
+//appends trade hsitory to the DOM
+function appendTradeHistory(){
+
 }
 
 //UTLITY FUNCTIONS
