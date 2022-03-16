@@ -4,6 +4,7 @@ const toolboxDisplay = document.getElementById('toolbox')
 const searchBtn = document.querySelector('#search-btn')
 const navWatchlist = document.querySelector('#nav-watchlist')
 const navSearchResults = document.querySelector('#nav-search-results')
+const tradeTableBody = document.querySelector('#trade-history-body')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 let watchlistFilter ;
@@ -31,7 +32,23 @@ navSearchResults.addEventListener('click', e =>{
   marketSearch(url)
 })
 
+//Loads Trade history on DOM Content Loaded
 document.addEventListener('DOMContentLoaded', e => fetchDatabase("trade-history",appendTradeHistory))
+
+//Refreshes Trade History when Trade History Refresh Button Selected
+document.querySelector('#trade-history-refresh').addEventListener('click', () => {
+  tradeTableBody.innerHTML = ''
+  fetchDatabase("trade-history",appendTradeHistory)
+})
+
+//Deletes All Trade History When Clear Button Is Clicked
+document.querySelector('#trade-history-clear').addEventListener('click' , e => {
+  const message = "Warning: You are about to delete all trading History! \nSelect OK to delete history or Cancel to return."
+  if(confirm(message) == true) {
+    fetchDatabase('trade-history', clearTradeHistory)
+    tradeTableBody.innerHTML = ''
+  } 
+})
 
 //API Requests
 
@@ -272,7 +289,6 @@ function toggleWatchlist(watchlistObj){
 
 //appends trade hsitory to the DOM
 function appendTradeHistory(tradeHistoryObj){
-  const tradeTableBody = document.querySelector('#trade-history-body')
   tradeHistoryObj.forEach(trade =>{
     let tr = document.createElement('tr')
     tr.innerHTML = `
@@ -317,6 +333,12 @@ function makeWatchlistItems(watchlistObj) {
   }
 }
 
-
+//deletes all data inside Trade History Array in db.json
+function clearTradeHistory(obj){
+  obj.forEach(element =>{
+    removeFromDb('trade-history',element.id)
+  })
+  fetchDatabase("trade-history",appendTradeHistory)
+}
 
 

@@ -66,7 +66,7 @@
                     <script type="text/javascript">
                     new TradingView.widget(
                     {
-                    "width": 350,
+                    "width": 400,
                     "height": 300,
                     "symbol": "NASDAQ:AAPL",
                     "interval": "D",
@@ -85,7 +85,7 @@
                   <!-- TradingView Widget END -->
                 
               </div>
-              <div class="col-md">
+              <div class="col-lg">
                 <div class="row-md">
                   <ul class="list-group list-group-horizontal-xxl rounded-3 text-start" id="main-display-data">
                     <li class="list-group-item text-primary" id="symbol">Symbol</li>
@@ -127,7 +127,10 @@
         <div class="col-md rounded-3 shadow-sm overflow-auto" id="trade-history">
          <div class="d-flex justify-content-evenly justify-content-center">
           <h4 class="text-primary text-center">Trade History</h4>
-          <button class="btn btn-primary" id="trade-history-refresh"><i class="bi bi-arrow-clockwise"></i></button>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-primary" id="trade-history-refresh"><i class="bi bi-arrow-clockwise"></i></button>
+            <button class="btn btn-secondary" id="trade-history-clear">Clear</button>
+        </div>
          </div> 
           <table class="table table-responsive table-striped ">
             <thead>
@@ -135,7 +138,7 @@
                 <th scope="col">Symbol</th>
                 <th scope="col">Type</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th scope="col">Price <small class="text-secondary fw-lighter">(USD)</small></th>
               </tr>
             </thead>
             <tbody id="trade-history-body">
