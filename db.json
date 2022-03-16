@@ -1,19 +1,6 @@
 {
   "watchlist": [
     {
-      "Symbol": "W",
-      "Open": "123.2200",
-      "High": "124.9900",
-      "Low": "113.7752",
-      "Price": "114.4500",
-      "Volume": "2582315",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "120.7300",
-      "Change": "-6.2800",
-      "ChangePercent": "-5.2017%",
-      "id": 4
-    },
-    {
       "Symbol": "RE",
       "Open": "275.9000",
       "High": "277.5450",
@@ -142,8 +129,47 @@
       "Change": "-1.0000",
       "ChangePercent": "-1.2860%",
       "id": 19
+    },
+    {
+      "Symbol": "W",
+      "Open": "106.6800",
+      "High": "118.3000",
+      "Low": "106.6800",
+      "Price": "112.8000",
+      "Volume": "3169976",
+      "LatestTradingDay": "2022-03-15",
+      "PreviousClose": "104.8100",
+      "Change": "7.9900",
+      "ChangePercent": "7.6233%",
+      "id": 20
     }
   ],
-  "portfolio": [],
-  "trade-history": []
+  "portfolio": [
+    {
+      "price": 7.67,
+      "date": "Wed Mar 16 2022 02:09:01 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "Buy",
+      "quantity": 1,
+      "id": 1
+    }
+  ],
+  "trade-history": [
+    {
+      "price": 7.67,
+      "date": "Wed Mar 16 2022 02:09:01 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "Buy",
+      "quantity": "4",
+      "id": 1
+    },
+    {
+      "price": 7.67,
+      "date": "Wed Mar 16 2022 02:09:12 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "Sell",
+      "quantity": "3",
+      "id": 2
+    }
+  ]
 }
