@@ -1,53 +1,18 @@
-/* #nav-bar {
-  background-color: #20c997;
-} */
 
-.teal-light {
-  background-color: #d2f4ea;
-}
-
-.row {
-  border-width: 2px;
-  /* border-style: solid;
-  border-color: #20c997; */
-  padding: 5px;
-  margin: 5px;
-}
-
- .row div {
-  border-width: 1px;
-  /* border-style: solid;
-  border-color: #20c997; */
-  margin: 3px;
-}
-
-/* #information {
-  height: 60vh;
-} */
-
-#bottom-row {
-  height: 40vh;
-}
-
+/* ID's */
 #asset-info {
   height: auto;
 }
 
-/* #chart {
-  height: 300px;
-  width: 300px;
-} */
-.margin-3px {
-  margin: 3px;
+#bottom-row {
+  height: 40vh;
 }
-
-.delete-btn {
-  margin: 0px;
-  padding: 0px;
-}
-
 #alerts {
   height: 350px;
+}
+
+#trade-history {
+  height: 40vh;
 }
 
 .Buy {
@@ -58,6 +23,22 @@
   color: rgb(187, 63, 63);
 }
 
-#trade-history {
-  height: 40vh;
+/* Classes */
+.margin-3px {
+  margin: 3px;
+}
+
+.row {
+  border-width: 2px;
+  padding: 3px;
+  margin: 3px;
+}
+
+ .row div {
+  border-width: 1px;
+  margin: 3px;
+}
+
+.bg-color {
+  background-color: rgb(227, 255, 221);
 }

@@ -338,7 +338,6 @@ function clearTradeHistory(obj){
   obj.forEach(element =>{
     removeFromDb('trade-history',element.id)
   })
-  fetchDatabase("trade-history",appendTradeHistory)
 }
 
 

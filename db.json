@@ -134,11 +134,11 @@
   "portfolio": [],
   "trade-history": [
     {
-      "price": 287.15,
-      "date": "Tue Mar 15 2022 21:09:35 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "MSFT",
+      "price": 801.89,
+      "date": "Tue Mar 15 2022 21:57:31 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "TSLA",
       "type": "Sell",
-      "quantity": "120",
+      "quantity": "200",
       "id": 1
     }
   ]
