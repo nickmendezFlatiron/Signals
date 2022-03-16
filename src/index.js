@@ -224,7 +224,15 @@ function printToDOM(stockDataObj){
     newTrade.symbol = stockDataObj.Symbol
     newTrade.type = camelCase(tradeOptions.value.toString())
     newTrade.quantity = e.target.value
-
+    // const enoughShares = () => {
+    //  fetchDatabase('portfolio',existsInDatabase)
+    // }
+    // enoughShares().forEach(stock => {
+    //   if (stock.symbol === stockDataObj.Symbol && e.target.value > stock.quantity){
+    //     alert(`Insufficient Shares, enter an integer less than ${stock.quantity}`)
+    //   }
+    // })
+    // console.log(enoughShares())
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
       updateDatabase(newTrade) 
       alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
@@ -237,14 +245,14 @@ function printToDOM(stockDataObj){
     
     })
   //sets watchlist button to active if the stock exists in the Watchlist
-  function existsInWatchlist(watchlistObj) {
+  function existsInDatabase(watchlistObj) {
     const duplicates = watchlistObj.filter(stock => {
       return stock.Symbol === stockDataObj.Symbol
     })
     // console.log(duplicates[0].Symbol)
     duplicates.length === 1 ? watchlistBtn.classList.add('active') : false ;
   }
-  fetchDatabase('watchlist',existsInWatchlist)
+  fetchDatabase('watchlist',existsInDatabase)
 }
 
 //adds Selected Stock to Watchlist 
@@ -304,11 +312,9 @@ function prependTradeHistory(tradeHistoryObj){
     <th scope="row">${trade.symbol}</th>
     <td class="${trade.type}">${trade.type}</td>
     <td>${trade.quantity}</td>
-    <td>${trade.price}</td>
-    `
+    <td>${trade.price}</td>`
   tradeTableBody.prepend(tr)
   })
-  
 }
 
 function appendPortfolio(portfolioObj) {
@@ -318,8 +324,7 @@ function appendPortfolio(portfolioObj) {
     tr.innerHTML = `
     <th scope="row">${stock.symbol}</th>
     <td>${stock.quantity}</td>
-    <td>${stock.price}</td>
-    `
+    <td>${stock.price}</td>`
     portfolioTableBody.appendChild(tr)
   })
 }
@@ -343,6 +348,8 @@ function makePortfolio(tradeHistoryObj) {
   setTimeout( () => {reducer.forEach(stock => {
       if(stock.quantity > 0) {
         updateDatabase(stock,'portfolio')
+      } else {
+
       }
     })}, 250) 
 }
