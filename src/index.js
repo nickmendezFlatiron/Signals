@@ -45,7 +45,7 @@ document.querySelector('#trade-history-refresh').addEventListener('click', () =>
 document.querySelector('#trade-history-clear').addEventListener('click' , e => {
   const message = "Warning: You are about to delete all trading History! \nSelect OK to delete history or Cancel to return."
   if(confirm(message) == true) {
-    fetchDatabase('trade-history', clearTradeHistory)
+    fetchDatabase('trade-history', clearDatabase)
     tradeTableBody.innerHTML = ''
   } 
 })
@@ -303,6 +303,7 @@ function appendTradeHistory(tradeHistoryObj){
 }
 
 //UTLITY FUNCTIONS
+
 //camelCases a string
 function camelCase (word) {
     word = word.split(" ");
@@ -333,10 +334,10 @@ function makeWatchlistItems(watchlistObj) {
   }
 }
 
-//deletes all data inside Trade History Array in db.json
-function clearTradeHistory(obj){
+//deletes all data inside a database in db.json,
+function clearDatabase(obj,db = 'trade-history'){
   obj.forEach(element =>{
-    removeFromDb('trade-history',element.id)
+    removeFromDb(db,element.id)
   })
 }
 
