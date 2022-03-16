@@ -146,30 +146,62 @@
   ],
   "portfolio": [
     {
+      "price": 78.26,
+      "date": "Wed Mar 16 2022 06:13:41 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "TD",
+      "type": "Buy",
+      "quantity": "20",
+      "id": 1
+    },
+    {
+      "price": 76.76,
+      "date": "Wed Mar 16 2022 06:15:40 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Buy",
+      "quantity": 3,
+      "id": 2
+    },
+    {
       "price": 7.67,
-      "date": "Wed Mar 16 2022 02:09:01 GMT-0400 (Eastern Daylight Time)",
+      "date": "Wed Mar 16 2022 06:16:36 GMT-0400 (Eastern Daylight Time)",
       "symbol": "NVCT",
       "type": "Buy",
-      "quantity": 1,
-      "id": 1
+      "quantity": "11",
+      "id": 4
     }
   ],
   "trade-history": [
     {
-      "price": 7.67,
-      "date": "Wed Mar 16 2022 02:09:01 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
+      "price": 78.26,
+      "date": "Wed Mar 16 2022 06:13:41 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "TD",
       "type": "Buy",
-      "quantity": "4",
+      "quantity": "20",
       "id": 1
     },
     {
-      "price": 7.67,
-      "date": "Wed Mar 16 2022 02:09:12 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "Sell",
-      "quantity": "3",
+      "price": 76.76,
+      "date": "Wed Mar 16 2022 06:15:40 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Buy",
+      "quantity": "13",
       "id": 2
+    },
+    {
+      "price": 76.76,
+      "date": "Wed Mar 16 2022 06:15:57 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Sell",
+      "quantity": "10",
+      "id": 3
+    },
+    {
+      "price": 7.67,
+      "date": "Wed Mar 16 2022 06:16:36 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "Buy",
+      "quantity": "11",
+      "id": 4
     }
   ]
 }
