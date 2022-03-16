@@ -319,11 +319,11 @@ function makePortfolio(tradeHistoryObj) {
   }, [])
   console.log(reducer)
   fetchDatabase('portfolio',clearPortfolio)
-  reducer.forEach(stock => {
-    if(stock.quantity > 0) {
-      updateDatabase(stock,'portfolio')
-    }
-  })
+  setTimeout( () => {reducer.forEach(stock => {
+      if(stock.quantity > 0) {
+        updateDatabase(stock,'portfolio')
+      }
+    })}, 200) 
 }
 
 //UTLITY FUNCTIONS
