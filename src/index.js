@@ -5,6 +5,7 @@ const searchBtn = document.querySelector('#search-btn')
 const navWatchlist = document.querySelector('#nav-watchlist')
 const navSearchResults = document.querySelector('#nav-search-results')
 const tradeTableBody = document.querySelector('#trade-history-body')
+const portfolioTableBody = document.querySelector('#my-portfolio-body')
 let searchResultsMatches = [] ;
 let stockDataObj ;
 let watchlistFilter ;
@@ -32,13 +33,19 @@ navSearchResults.addEventListener('click', e =>{
   marketSearch(url)
 })
 
-//Loads Trade history on DOM Content Loaded
-document.addEventListener('DOMContentLoaded', e => fetchDatabase("trade-history",appendTradeHistory))
+document.querySelector('#my-portfolio-refresh').addEventListener('click',() => fetchDatabase('portfolio', appendPortfolio))
+
+
+//Loads Trade history and Portfolio after DOM Content Loaded
+document.addEventListener('DOMContentLoaded', e => {
+  fetchDatabase("trade-history",prependTradeHistory)
+  fetchDatabase('portfolio', appendPortfolio)
+})
 
 //Refreshes Trade History when Trade History Refresh Button Selected
 document.querySelector('#trade-history-refresh').addEventListener('click', () => {
   tradeTableBody.innerHTML = ''
-  fetchDatabase("trade-history",appendTradeHistory)
+  fetchDatabase("trade-history",prependTradeHistory)
 })
 
 //Deletes All Trade History When Clear Button Is Clicked
@@ -46,6 +53,7 @@ document.querySelector('#trade-history-clear').addEventListener('click' , e => {
   const message = "Warning: You are about to delete all trading History! \nSelect OK to delete history or Cancel to return."
   if(confirm(message) == true) {
     fetchDatabase('trade-history', clearDatabase)
+    fetchDatabase('portfolio', clearPortfolio)
     tradeTableBody.innerHTML = ''
   } 
 })
@@ -288,8 +296,8 @@ function toggleWatchlist(watchlistObj){
 }
 
 
-//appends trade hsitory to the DOM
-function appendTradeHistory(tradeHistoryObj){
+//appends trade history to the DOM
+function prependTradeHistory(tradeHistoryObj){
   tradeHistoryObj.forEach(trade =>{
     let tr = document.createElement('tr')
     tr.innerHTML = `
@@ -298,9 +306,22 @@ function appendTradeHistory(tradeHistoryObj){
     <td>${trade.quantity}</td>
     <td>${trade.price}</td>
     `
-  tradeTableBody.appendChild(tr)
+  tradeTableBody.prepend(tr)
   })
   
+}
+
+function appendPortfolio(portfolioObj) {
+  portfolioTableBody.innerHTML = ''
+  portfolioObj.forEach(stock => {
+    let tr = document.createElement('tr')
+    tr.innerHTML = `
+    <th scope="row">${stock.symbol}</th>
+    <td>${stock.quantity}</td>
+    <td>${stock.price}</td>
+    `
+    portfolioTableBody.appendChild(tr)
+  })
 }
 
 //Reduces the trade History to make the portfolio
@@ -323,7 +344,7 @@ function makePortfolio(tradeHistoryObj) {
       if(stock.quantity > 0) {
         updateDatabase(stock,'portfolio')
       }
-    })}, 200) 
+    })}, 250) 
 }
 
 //UTLITY FUNCTIONS
