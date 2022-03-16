@@ -220,6 +220,7 @@ function printToDOM(stockDataObj){
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
       updateTradeHistory(newTrade) 
       alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
+      fetchDatabase("trade-history",makePortfolio)
       e.target.value = "" 
 
       } else if (e.key ==='Enter' && (Number.isInteger(Number(e.target.value)) || e.target.value > 0))
@@ -300,6 +301,26 @@ function appendTradeHistory(tradeHistoryObj){
   tradeTableBody.appendChild(tr)
   })
   
+}
+
+//Reduces the trade History to make the portfolio
+function makePortfolio(tradeHistoryObj) {
+  
+  const reducer = tradeHistoryObj.reduce((reducer, item) => {
+    const existing = reducer.find(stock => stock.symbol === item.symbol)
+    if (existing && item.type === 'Buy') {
+    existing.quantity =  parseInt(existing.quantity) + parseInt(item.quantity);
+    } else if(existing && item.type === 'Sell') {
+      existing.quantity =  parseInt(existing.quantity) - parseInt(item.quantity);
+    }
+    else {
+      reducer.push(item);
+    }
+    return reducer;
+  }, [])
+  
+  console.log(reducer)
+  // reducer.reduce()
 }
 
 //UTLITY FUNCTIONS
