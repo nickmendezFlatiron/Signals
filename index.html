@@ -124,9 +124,12 @@
         <div class="col-md rounded-3 shadow-sm" id="my-portfolio">
           <h4 class="text-primary">My Portfolio</h4>
         </div>
-        <div class="col-md rounded-3 shadow-sm" id="trade-history">
-          <h4 class="text-primary">Trade History</h4>
-          <table class="table table-responsive table-striped overflow-auto">
+        <div class="col-md rounded-3 shadow-sm overflow-auto" id="trade-history">
+         <div class="d-flex justify-content-evenly justify-content-center">
+          <h4 class="text-primary text-center">Trade History</h4>
+          <button class="btn btn-primary" id="trade-history-refresh"><i class="bi bi-arrow-clockwise"></i></button>
+         </div> 
+          <table class="table table-responsive table-striped ">
             <thead>
               <tr>
                 <th scope="col">Symbol</th>
@@ -136,24 +139,6 @@
               </tr>
             </thead>
             <tbody id="trade-history-body">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td> </td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
           

@@ -31,6 +31,8 @@ navSearchResults.addEventListener('click', e =>{
   marketSearch(url)
 })
 
+document.addEventListener('DOMContentLoaded', e => fetchDatabase("trade-history",appendTradeHistory))
+
 //API Requests
 
 //adds stock to Watchlist by sending Post request to the local server-watchlist
@@ -192,10 +194,10 @@ function printToDOM(stockDataObj){
   const tradeQuantity = document.querySelector("#trade-quantity")
   tradeQuantity.addEventListener('keypress', e =>{
     let newTrade = {}
-    newTrade.price = stockDataObj.Price
+    newTrade.price = roundNumber(stockDataObj.Price)
     newTrade.date = Date().toString()
     newTrade.symbol = stockDataObj.Symbol
-    newTrade.type = tradeOptions.value.toString()
+    newTrade.type = camelCase(tradeOptions.value.toString())
     newTrade.quantity = e.target.value
 
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
@@ -269,17 +271,19 @@ function toggleWatchlist(watchlistObj){
 
 
 //appends trade hsitory to the DOM
-function appendTradeHistory(watchlistObj){
+function appendTradeHistory(tradeHistoryObj){
   const tradeTableBody = document.querySelector('#trade-history-body')
-  let tr = document.createElement('tr')
-  
-  //   <tr>
-  //   <th scope="row">1</th>
-  //   <td>Mark</td>
-  //   <td>Otto</td>
-  //   <td>@mdo</td>
-  // </tr>
+  tradeHistoryObj.forEach(trade =>{
+    let tr = document.createElement('tr')
+    tr.innerHTML = `
+    <th scope="row">${trade.symbol}</th>
+    <td class="${trade.type}">${trade.type}</td>
+    <td>${trade.quantity}</td>
+    <td>${trade.price}</td>
+    `
   tradeTableBody.appendChild(tr)
+  })
+  
 }
 
 //UTLITY FUNCTIONS

@@ -49,3 +49,15 @@
 #alerts {
   height: 350px;
 }
+
+.Buy {
+  color: rgb(92, 228, 92);
+}
+
+.Sell {
+  color: rgb(187, 63, 63);
+}
+
+#trade-history {
+  height: 40vh;
+}

@@ -103,41 +103,38 @@
       "Change": "-0.1500",
       "ChangePercent": "-5.2265%",
       "id": 16
+    },
+    {
+      "Symbol": "RDFN",
+      "Open": "16.6700",
+      "High": "17.1000",
+      "Low": "16.2300",
+      "Price": "17.0000",
+      "Volume": "2318761",
+      "LatestTradingDay": "2022-03-15",
+      "PreviousClose": "16.6100",
+      "Change": "0.3900",
+      "ChangePercent": "2.3480%",
+      "id": 17
     }
   ],
   "portfolio": [],
   "trade-history": [
     {
-      "price": "276.4400",
-      "date": "Tue Mar 15 2022 00:34:31 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "MSFT",
-      "type": "sell",
-      "quantity": "100",
+      "price": 7.67,
+      "date": "Tue Mar 15 2022 20:10:35 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "NVCT",
+      "type": "Buy",
+      "quantity": "4",
       "id": 1
     },
     {
-      "price": "9.1000",
-      "date": "Tue Mar 15 2022 00:37:34 GMT-0400 (Eastern Daylight Time)",
+      "price": 7.67,
+      "date": "Tue Mar 15 2022 20:10:38 GMT-0400 (Eastern Daylight Time)",
       "symbol": "NVCT",
-      "type": "buy",
-      "quantity": "31",
+      "type": "Sell",
+      "quantity": "4",
       "id": 2
-    },
-    {
-      "price": "272.0100",
-      "date": "Tue Mar 15 2022 13:31:38 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "RE",
-      "type": "sell",
-      "quantity": "12",
-      "id": 3
-    },
-    {
-      "price": "9.1000",
-      "date": "Tue Mar 15 2022 13:33:04 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "sell",
-      "quantity": "15",
-      "id": 4
     }
   ]
 }
