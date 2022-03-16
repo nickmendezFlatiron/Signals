@@ -96,8 +96,8 @@ function fetchDatabase(db,funct) {
   })
 }
 
-function updateTradeHistory (newTrade) {
-  fetch('http://localhost:3000/trade-history', {
+function updateDatabase (newTrade, db = 'trade-history') {
+  fetch(`http://localhost:3000/${db}`, {
     method: 'POST' ,
     headers: {
       'Content-Type': 'application/json'
@@ -218,7 +218,7 @@ function printToDOM(stockDataObj){
     newTrade.quantity = e.target.value
 
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
-      updateTradeHistory(newTrade) 
+      updateDatabase(newTrade) 
       alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
       fetchDatabase("trade-history",makePortfolio)
       e.target.value = "" 
@@ -305,22 +305,25 @@ function appendTradeHistory(tradeHistoryObj){
 
 //Reduces the trade History to make the portfolio
 function makePortfolio(tradeHistoryObj) {
-  
-  const reducer = tradeHistoryObj.reduce((reducer, item) => {
-    const existing = reducer.find(stock => stock.symbol === item.symbol)
-    if (existing && item.type === 'Buy') {
-    existing.quantity =  parseInt(existing.quantity) + parseInt(item.quantity);
-    } else if(existing && item.type === 'Sell') {
-      existing.quantity =  parseInt(existing.quantity) - parseInt(item.quantity);
+  const reducer = tradeHistoryObj.reduce((reducer, trade) => {
+    const existing = reducer.find(stock => stock.symbol === trade.symbol)
+    if (existing && trade.type === 'Buy') {
+    existing.quantity =  parseInt(existing.quantity) + parseInt(trade.quantity);
+    } else if(existing && trade.type === 'Sell') {
+      existing.quantity =  parseInt(existing.quantity) - parseInt(trade.quantity);
     }
     else {
-      reducer.push(item);
+      reducer.push(trade);
     }
     return reducer;
   }, [])
-  
   console.log(reducer)
-  // reducer.reduce()
+  fetchDatabase('portfolio',clearPortfolio)
+  reducer.forEach(stock => {
+    if(stock.quantity > 0) {
+      updateDatabase(stock,'portfolio')
+    }
+  })
 }
 
 //UTLITY FUNCTIONS
@@ -362,4 +365,9 @@ function clearDatabase(obj,db = 'trade-history'){
   })
 }
 
+function clearPortfolio (obj,db = 'portfolio'){
+  obj.forEach(element =>{
+    removeFromDb(db,element.id)
+  })
+}
 

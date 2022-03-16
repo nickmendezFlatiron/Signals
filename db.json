@@ -129,13 +129,35 @@
       "Change": "1.0700",
       "ChangePercent": "1.3862%",
       "id": 18
+    },
+    {
+      "Symbol": "BABA",
+      "Open": "75.1000",
+      "High": "80.1400",
+      "Low": "73.2800",
+      "Price": "76.7600",
+      "Volume": "85283797",
+      "LatestTradingDay": "2022-03-15",
+      "PreviousClose": "77.7600",
+      "Change": "-1.0000",
+      "ChangePercent": "-1.2860%",
+      "id": 19
     }
   ],
-  "portfolio": [],
+  "portfolio": [
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:20:13 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Buy",
+      "quantity": 16,
+      "id": 1
+    }
+  ],
   "trade-history": [
     {
       "price": 192.03,
-      "date": "Wed Mar 16 2022 00:22:39 GMT-0400 (Eastern Daylight Time)",
+      "date": "Wed Mar 16 2022 01:20:13 GMT-0400 (Eastern Daylight Time)",
       "symbol": "FB",
       "type": "Buy",
       "quantity": "4",
@@ -143,19 +165,83 @@
     },
     {
       "price": 192.03,
-      "date": "Wed Mar 16 2022 00:22:44 GMT-0400 (Eastern Daylight Time)",
+      "date": "Wed Mar 16 2022 01:20:24 GMT-0400 (Eastern Daylight Time)",
       "symbol": "FB",
       "type": "Sell",
-      "quantity": "3",
+      "quantity": "2",
       "id": 2
     },
     {
       "price": 192.03,
-      "date": "Wed Mar 16 2022 00:23:13 GMT-0400 (Eastern Daylight Time)",
+      "date": "Wed Mar 16 2022 01:21:56 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Buy",
+      "quantity": "4",
+      "id": 3
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:22:17 GMT-0400 (Eastern Daylight Time)",
       "symbol": "FB",
       "type": "Sell",
-      "quantity": "24",
-      "id": 3
+      "quantity": "2",
+      "id": 4
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:22:32 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Buy",
+      "quantity": "10",
+      "id": 5
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:23:27 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Sell",
+      "quantity": "2",
+      "id": 6
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:23:37 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Sell",
+      "quantity": "2",
+      "id": 7
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:23:50 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Sell",
+      "quantity": "2",
+      "id": 8
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:23:59 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Sell",
+      "quantity": "2",
+      "id": 9
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:24:06 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Sell",
+      "quantity": "2",
+      "id": 10
+    },
+    {
+      "price": 192.03,
+      "date": "Wed Mar 16 2022 01:24:16 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "FB",
+      "type": "Buy",
+      "quantity": "12",
+      "id": 11
     }
   ]
 }
