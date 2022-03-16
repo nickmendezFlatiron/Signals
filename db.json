@@ -132,14 +132,5 @@
     }
   ],
   "portfolio": [],
-  "trade-history": [
-    {
-      "price": 801.89,
-      "date": "Tue Mar 15 2022 21:57:31 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TSLA",
-      "type": "Sell",
-      "quantity": "200",
-      "id": 1
-    }
-  ]
+  "trade-history": []
 }

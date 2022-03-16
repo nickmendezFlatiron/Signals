@@ -34,9 +34,8 @@
   margin: 3px;
 }
 
- .row div {
-  border-width: 1px;
-  margin: 3px;
+.row div {
+  padding-top: 5px;
 }
 
 .bg-color {
