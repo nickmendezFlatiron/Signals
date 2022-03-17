@@ -224,16 +224,10 @@ function printToDOM(stockDataObj){
     newTrade.symbol = stockDataObj.Symbol
     newTrade.type = camelCase(tradeOptions.value.toString())
     newTrade.quantity = e.target.value
-    // const enoughShares = () => {
-    //  fetchDatabase('portfolio',existsInDatabase)
-    // }
-    // enoughShares().forEach(stock => {
-    //   if (stock.symbol === stockDataObj.Symbol && e.target.value > stock.quantity){
-    //     alert(`Insufficient Shares, enter an integer less than ${stock.quantity}`)
-    //   }
-    // })
-    // console.log(enoughShares())
+ 
+   console.log(fetchDatabase('portfolio' , duplicates))
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
+
       updateDatabase(newTrade) 
       alert(`Market ${camelCase(newTrade.type)} of ${newTrade.quantity} ${newTrade.symbol} Shares Successfully Executed`)
       fetchDatabase("trade-history",makePortfolio)
@@ -270,7 +264,7 @@ function WatchlistListener(stockDataObj) {
 
 function appendWatchlist(watchlistObj) {
   toolboxDisplay.innerHTML = `<h4 class="text-center text-primary">WatchList</h4>
-  <input class="form-control"  placeholder="Filter WatchList..." id="watchlist-filter">
+  <input class="form-control"  placeholder="Filter WatchList By Ticker..." id="watchlist-filter">
   <ul class="list-group list-group-horizontal-xxl rounded-3 text-start d-flex justify-content-center overflow-auto" id="watchlist-stocks"></ul>
   `
   watchlistFilter = document.querySelector('#watchlist-filter')
@@ -343,7 +337,7 @@ function makePortfolio(tradeHistoryObj) {
     }
     return reducer;
   }, [])
-  console.log(reducer)
+  // console.log(reducer)
   fetchDatabase('portfolio',clearPortfolio)
   setTimeout( () => {reducer.forEach(stock => {
       if(stock.quantity > 0) {

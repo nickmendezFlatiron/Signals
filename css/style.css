@@ -8,11 +8,11 @@
   height: 40vh;
 }
 #alerts {
-  height: 350px;
+  height: 51vh;
 }
 
-#trade-history {
-  height: 40vh;
+#trade-history, #my-portfolio {
+  height: 45vh;
 }
 
 .Buy {

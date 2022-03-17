@@ -1,32 +1,6 @@
 {
   "watchlist": [
     {
-      "Symbol": "RE",
-      "Open": "275.9000",
-      "High": "277.5450",
-      "Low": "271.1900",
-      "Price": "271.4100",
-      "Volume": "282208",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "273.7900",
-      "Change": "-2.3800",
-      "ChangePercent": "-0.8693%",
-      "id": 6
-    },
-    {
-      "Symbol": "NVCT",
-      "Open": "7.7000",
-      "High": "8.3000",
-      "Low": "7.6500",
-      "Price": "8.2700",
-      "Volume": "123751",
-      "LatestTradingDay": "2022-03-11",
-      "PreviousClose": "8.2600",
-      "Change": "0.0100",
-      "ChangePercent": "0.1211%",
-      "id": 8
-    },
-    {
       "Symbol": "MSFT",
       "Open": "287.9600",
       "High": "289.5100",
@@ -92,19 +66,6 @@
       "id": 16
     },
     {
-      "Symbol": "RDFN",
-      "Open": "16.6700",
-      "High": "17.1000",
-      "Low": "16.2300",
-      "Price": "17.0000",
-      "Volume": "2318761",
-      "LatestTradingDay": "2022-03-15",
-      "PreviousClose": "16.6100",
-      "Change": "0.3900",
-      "ChangePercent": "2.3480%",
-      "id": 17
-    },
-    {
       "Symbol": "TD",
       "Open": "77.5000",
       "High": "78.3600",
@@ -142,138 +103,34 @@
       "Change": "7.9900",
       "ChangePercent": "7.6233%",
       "id": 20
+    },
+    {
+      "Symbol": "QABA",
+      "Open": "58.6500",
+      "High": "59.5800",
+      "Low": "58.5600",
+      "Price": "59.5000",
+      "Volume": "21813",
+      "LatestTradingDay": "2022-03-16",
+      "PreviousClose": "58.3500",
+      "Change": "1.1500",
+      "ChangePercent": "1.9709%",
+      "id": 21
+    },
+    {
+      "Symbol": "RE",
+      "Open": "282.4100",
+      "High": "284.9900",
+      "Low": "277.9900",
+      "Price": "283.4000",
+      "Volume": "275536",
+      "LatestTradingDay": "2022-03-16",
+      "PreviousClose": "278.7600",
+      "Change": "4.6400",
+      "ChangePercent": "1.6645%",
+      "id": 22
     }
   ],
-  "portfolio": [
-    {
-      "price": 78.26,
-      "date": "Wed Mar 16 2022 06:13:41 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TD",
-      "type": "Buy",
-      "quantity": "20",
-      "id": 1
-    },
-    {
-      "price": 76.76,
-      "date": "Wed Mar 16 2022 06:15:40 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "BABA",
-      "type": "Buy",
-      "quantity": 3,
-      "id": 2
-    },
-    {
-      "price": 155.09,
-      "date": "Wed Mar 16 2022 12:55:58 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Buy",
-      "quantity": 4,
-      "id": 10
-    }
-  ],
-  "trade-history": [
-    {
-      "price": 78.26,
-      "date": "Wed Mar 16 2022 06:13:41 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TD",
-      "type": "Buy",
-      "quantity": "20",
-      "id": 1
-    },
-    {
-      "price": 76.76,
-      "date": "Wed Mar 16 2022 06:15:40 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "BABA",
-      "type": "Buy",
-      "quantity": "13",
-      "id": 2
-    },
-    {
-      "price": 76.76,
-      "date": "Wed Mar 16 2022 06:15:57 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "BABA",
-      "type": "Sell",
-      "quantity": "10",
-      "id": 3
-    },
-    {
-      "price": 7.67,
-      "date": "Wed Mar 16 2022 06:16:36 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "Buy",
-      "quantity": "11",
-      "id": 4
-    },
-    {
-      "price": 7.67,
-      "date": "Wed Mar 16 2022 06:17:57 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "Sell",
-      "quantity": "20",
-      "id": 5
-    },
-    {
-      "price": 7.67,
-      "date": "Wed Mar 16 2022 06:19:28 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "NVCT",
-      "type": "Sell",
-      "quantity": "10",
-      "id": 6
-    },
-    {
-      "price": 32.92,
-      "date": "Wed Mar 16 2022 12:50:52 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TR",
-      "type": "Buy",
-      "quantity": "12",
-      "id": 7
-    },
-    {
-      "price": 32.92,
-      "date": "Wed Mar 16 2022 12:51:08 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TR",
-      "type": "Sell",
-      "quantity": "10",
-      "id": 8
-    },
-    {
-      "price": 32.92,
-      "date": "Wed Mar 16 2022 12:53:47 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "TR",
-      "type": "Sell",
-      "quantity": "4",
-      "id": 9
-    },
-    {
-      "price": 155.09,
-      "date": "Wed Mar 16 2022 12:55:58 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Buy",
-      "quantity": "5",
-      "id": 10
-    },
-    {
-      "price": 155.09,
-      "date": "Wed Mar 16 2022 12:56:06 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Sell",
-      "quantity": "6",
-      "id": 11
-    },
-    {
-      "price": 155.09,
-      "date": "Wed Mar 16 2022 12:56:15 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Buy",
-      "quantity": "2",
-      "id": 12
-    },
-    {
-      "price": 155.09,
-      "date": "Wed Mar 16 2022 13:03:50 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Buy",
-      "quantity": "3",
-      "id": 13
-    }
-  ]
+  "portfolio": [],
+  "trade-history": []
 }
