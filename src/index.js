@@ -22,7 +22,7 @@ searchBtn.addEventListener('click',e => {
 })
 
 navWatchlist.addEventListener('click', e => {
-  e.preventDefault
+  e.preventDefault()
   fetchDatabase('watchlist',appendWatchlist)
 })
 
@@ -225,7 +225,6 @@ function printToDOM(stockDataObj){
     newTrade.type = camelCase(tradeOptions.value.toString())
     newTrade.quantity = e.target.value
  
-   console.log(fetchDatabase('portfolio' , duplicates))
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
 
       updateDatabase(newTrade) 
@@ -349,7 +348,6 @@ function makePortfolio(tradeHistoryObj) {
 }
 
 //UTLITY FUNCTIONS
-
 //camelCases a string
 function camelCase (word) {
     word = word.split(" ");
@@ -373,8 +371,8 @@ function makeWatchlistItems(watchlistObj) {
   for (let stock of watchlistObj) {
     let li = document.createElement('li')
     li.id = stock.Symbol
-    li.classList.add('list-group-item' , 'text-start')
-    li.innerText = `${stock.Symbol} : $${roundNumber(stock.Price)}`
+    li.classList.add('list-group-item' , 'text-start' ,'text-primary')
+    li.innerText = `${stock.Symbol}`
     li.addEventListener('click', e => appendDisplay(e))
     watchlistStocks.appendChild(li)   
   }

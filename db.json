@@ -129,8 +129,47 @@
       "Change": "4.6400",
       "ChangePercent": "1.6645%",
       "id": 22
+    },
+    {
+      "Symbol": "NVCT",
+      "Open": "7.5000",
+      "High": "8.3300",
+      "Low": "7.5000",
+      "Price": "7.6300",
+      "Volume": "55523",
+      "LatestTradingDay": "2022-03-17",
+      "PreviousClose": "7.5800",
+      "Change": "0.0500",
+      "ChangePercent": "0.6596%",
+      "id": 23
     }
   ],
-  "portfolio": [],
-  "trade-history": []
+  "portfolio": [
+    {
+      "price": 100.37,
+      "date": "Fri Mar 18 2022 14:05:16 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Buy",
+      "quantity": 99,
+      "id": 1
+    }
+  ],
+  "trade-history": [
+    {
+      "price": 100.37,
+      "date": "Fri Mar 18 2022 14:05:16 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Buy",
+      "quantity": "199",
+      "id": 1
+    },
+    {
+      "price": 100.37,
+      "date": "Fri Mar 18 2022 14:05:35 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BABA",
+      "type": "Sell",
+      "quantity": "100",
+      "id": 2
+    }
+  ]
 }
