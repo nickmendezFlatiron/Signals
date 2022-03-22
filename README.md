@@ -10,9 +10,20 @@ Signals is a stock market tool for trading ,research, and analysis. Signals simp
 
 ## Signals Features
 
-Navigation Bar
+Overview
+
+
+
+### Navigation Bar
 
 ![Navbar](https://github.com/nickmendezFlatiron/Signals/blob/main/img/navbar.png)
+
+Note :The tabs on the lefthand side of the navigation bar are features that I hopefully will be able to add into the Signals app as I learn more through the SE bootcamp. 
+
+The Toolbox consists of 2 different tools, formatted in a dropdown menu style. 
+The Stock Watchlist displays all of the different stocks you have added to your 
+
+
 
 
 ## Sources
