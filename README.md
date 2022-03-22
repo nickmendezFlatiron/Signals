@@ -3,7 +3,7 @@
 # Signals
 ### Overview
 
-Signals is a stock market tool for trading ,research, and analysis. Signals simplifies the fundamental uses of advanced trading tools into a user-friendly interface. No previous experience with any stock market tools is required. Use Signals to keep up to date with daily updated fundamental trading information and stock quotes, as well as real-time charting capabilities. Keep track of your favorite stocks and personal trades with localhost database.
+__Signals__ is a stock market tool for trading ,research, and analysis. Signals simplifies the fundamental uses of advanced trading tools into a user-friendly interface. No previous experience with any stock market tools is required. Use Signals to keep up to date with daily updated fundamental trading information and stock quotes, as well as real-time charting capabilities. Keep track of your favorite stocks and personal trades with localhost database.
 
 ## Installation
 
@@ -19,17 +19,17 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 
 
 ###  1.  Navigation Bar
-  -   Note : The tabs on the lefthand side of the navigation bar are features that I hopefully will be able to add into the Signals app as I learn more through the SE bootcamp. 
+  -  ***Note*** : The tabs on the lefthand side of the navigation bar are features that I hopefully will be able to add into the Signals app as I learn more through the SE bootcamp. 
   - The Toolbox consists of 2 different tools, formatted in a dropdown menu style. The Watchlist displays all of the different stocks you have added to your 
   - The Search bar populates the Toolbox display (#3) with the top 5 best-matching stock symbols(ticker) based on keywords of your choice, in descending relevancy. 
 
 ### 2. Main Display
 
-  - The Main Display lists all relevant data for the selected stock, formally known as a stock quote. Select a stock by clicking on it in either the Search Results list or Watchlist in the Toolbox display area. 
-  - Change charts by clicking on the top left corner of the chart, where the ticker is displayed, and enter the ticker indicated in section 2 next to Symbol.
-  - The chart widget allows the user to technically analyze stock price action and plan trades through multiple indicators and timeframes
-  - The Watchlist button allows a user to build a stock watchlist. The watchlist is stored in the localhost database "watchlist". The watchlist button is highlighted blue when the stock is added to the Watchlist. There is no limit to how many stocks a user can watch
-  - The Buy/Sell dropdown allows you to execute simulated stock trades. Enter a quantity , select either "buy" or "sell" from the dropdown, and hit the "enter" button to execute the trade.
+  i. The Main Display lists all relevant data for the selected stock, formally known as a stock quote. Select a stock by clicking on it in either the Search Results list or Watchlist in the Toolbox display area. 
+  ii. Change charts by clicking on the top left corner of the chart, where the ticker is displayed, and enter the ticker indicated in section 2 next to Symbol.
+  iii. The chart widget allows the user to technically analyze stock price action and plan trades through multiple indicators and timeframes
+  iiii. The Watchlist button allows a user to build a stock watchlist. The watchlist is stored in the localhost database "watchlist". The watchlist button is highlighted blue when the stock is added to the Watchlist. There is no limit to how many stocks a user can watch
+  iiiii. The Buy/Sell dropdown allows you to execute simulated stock trades. Enter a quantity , select either "buy" or "sell" from the dropdown, and hit the "enter" button to execute the trade.
 
 ### 3. Toolbox Display
   - This area is where the information from the selected Toolbox tool is displayed. This area is automatically populated with a list of the top 5 search results whenever a user runs a new stock search.
@@ -44,7 +44,7 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
   - 
 
 ### 5. Trading History
-  - Note: clearing the trading history will also clear all trades
+  - ***Note:*** clearing the trading history will also clear all trades
   - Trade history displays every trade a user has executed.
   - Specifies the type of trade, the ticker traded, the quantity, and price at the time of the trade
   - Click on the refresh button to update your trade history in real time
@@ -64,10 +64,10 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 
 ### Future Ideas
 
-  - My Signals tab : I'd like to build an easy way for people to build their own automated trade strategies because currently, the only way to develop algorithmic trade strategies is by knowing how to code. The barrier to entry is high , especially for those who would like automate their trades but do not have the time to learn to code. These automated trade strategies and alerts made by a user would be called Signals. 
+  - __My Signals tab :__ I'd like to build an easy way for people to build their own automated trade strategies because currently, the only way to develop algorithmic trade strategies is by knowing how to code. The barrier to entry is high , especially for those who would like automate their trades but do not have the time to learn to code. These automated trade strategies and alerts made by a user would be called Signals. 
     - Also, I haven't found any platforms that allow you to execute such strategies against historical data. Ideally, a user can test his Signals against historical data before they made their Signal live.
-  - Community tab : This is a form style area where Signals users can communicate ideas with one another , help one another with building their own Signals, and post discussions.
-  - Marketplace : This is where users can buy, sell, and trade their Signals. I'd set up different price models and have some type of standardized performance rating system for all Signals listed on the Marketplace. 
+  - __Community tab :__ This is a form style area where Signals users can communicate ideas with one another , help one another with building their own Signals, and post discussions.
+  - __Marketplace :__ This is where users can buy, sell, and trade their Signals. I'd set up different price models and have some type of standardized performance rating system for all Signals listed on the Marketplace. 
 
 ## Sources
 
