@@ -54,7 +54,7 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 ## Example
   - A user wants the latest information on Tesla , but does not know the ticker symbol.
   - User enters "Tesla" in the Search bar and selects the most relevant symbol (the first one)
-  - Tesla, we now knoe as TSLA , has it's latest stock quote populated in the main display
+  - Tesla, we now know as TSLA , has it's latest stock quote populated in the main display
   - User wants to set up a trade based on price action. User enters TSLA into the chart widget and uses the tools and indicators to decide whether or not they want to execute a trade.
   - If user wants to execute a trade now, then they enter the quantity and trade type, and clicks enter
   - If user wants to execute a trade later, but doesn't want to search for TSLA again, then they add it to their watchlist by clicking on the watchlist button.
