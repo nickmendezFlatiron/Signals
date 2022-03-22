@@ -10,6 +10,7 @@ Signals is a stock market tool for trading ,research, and analysis. Signals simp
 [Follow these instructions to fork and clone this repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop)
 
 Run in terminal - json-server --watch db.json to setup localhost database
+
 Note: [Make sure to install node.js first](https://nodejs.org/en/)
 
 ## Signals Features
