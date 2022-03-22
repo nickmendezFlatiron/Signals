@@ -12,7 +12,7 @@ Signals is a stock market tool for trading ,research, and analysis. Signals simp
 
 ### Overview
 
-![Signals Interface]()
+![Signals Interface](afa)
 
 
 
