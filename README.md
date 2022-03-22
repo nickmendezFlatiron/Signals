@@ -26,6 +26,8 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 ### 2. Main Display
 
   - The Main Display lists all relevant data for the selected stock, formally known as a stock quote. Select a stock by clicking on it in either the Search Results list or Watchlist in the Toolbox display area. 
+    - Green values indicate an increase compared to the previous day
+    - Red values indicate a decrease compared to the previous day
   - Change charts by clicking on the top left corner of the chart, where the ticker is displayed, and enter the ticker indicated in section 2 next to Symbol.
   - The chart widget allows the user to technically analyze stock price action and plan trades through multiple indicators and timeframes
   - The Watchlist button allows a user to build a stock watchlist. The watchlist is stored in the localhost database "watchlist". The watchlist button is highlighted blue when the stock is added to the Watchlist. There is no limit to how many stocks a user can watch
