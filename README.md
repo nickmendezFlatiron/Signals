@@ -10,6 +10,9 @@ Signals is a stock market tool for trading ,research, and analysis. Signals simp
 
 ## Signals Features
 
+Navigation Bar
+
+![Navbar](https://github.com/nickmendezFlatiron/Signals/blob/main/img/navbar.png)
 
 
 ## Sources
