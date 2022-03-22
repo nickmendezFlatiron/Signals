@@ -67,7 +67,7 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 
   - __My Signals tab :__ I'd like to build an easy way for people to build their own automated trade strategies because currently, the only way to develop algorithmic trade strategies is by knowing how to code. The barrier to entry is high , especially for those who would like automate their trades but do not have the time to learn to code. These automated trade strategies and alerts made by a user would be called Signals. 
     - Also, I haven't found any platforms that allow you to execute such strategies against historical data. Ideally, a user can test their Signals against historical data before they made their Signal live.
-  - __Community tab :__ This is a form style area where Signals users can communicate ideas with one another , help one another with building their own Signals, and post discussions.
+  - __Community tab :__ This is a forum style messageboard where Signals users can communicate ideas with one another , help one another with building their own Signals, and post discussions.
   - __Marketplace :__ This is where users can buy, sell, and trade their Signals. I'd set up different price models and have some type of standardized performance rating system for all Signals listed on the Marketplace. 
 
 ## Sources
