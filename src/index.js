@@ -314,10 +314,22 @@ function appendPortfolio(portfolioObj) {
   portfolioTableBody.innerHTML = ''
   portfolioObj.forEach(stock => {
     let tr = document.createElement('tr')
+
+    if(stock.quantity > 0) {
+      tr.innerHTML = `
+    <th scope="row">${stock.symbol}</th>
+    <td class="text-success">${stock.type}</td>
+    <td>${stock.quantity}</td>
+    <td>${stock.price}</td>
+    `
+    } else if(stock.quantity < 0)
     tr.innerHTML = `
     <th scope="row">${stock.symbol}</th>
-    <td>${stock.quantity}</td>
-    <td>${stock.price}</td>`
+    <td class="text-danger">${stock.type}</td>
+    <td>${(parseInt(stock.quantity) * -1)}</td>
+    <td>${stock.price}</td>
+    `
+    
     portfolioTableBody.appendChild(tr)
   })
 }
@@ -340,9 +352,11 @@ function makePortfolio(tradeHistoryObj) {
   fetchDatabase('portfolio',clearPortfolio)
   setTimeout( () => {reducer.forEach(stock => {
       if(stock.quantity > 0) {
+        stock.type = 'Long'
         updateDatabase(stock,'portfolio')
-      } else {
-
+      } else if(stock.quantity < 0){ 
+        stock.type = "Short"
+        updateDatabase(stock,'portfolio')
       }
     })}, 250) 
 }

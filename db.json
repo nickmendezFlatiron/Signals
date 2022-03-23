@@ -146,30 +146,78 @@
   ],
   "portfolio": [
     {
-      "price": 165.38,
-      "date": "Mon Mar 21 2022 20:27:14 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
-      "type": "Buy",
-      "quantity": 10,
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 20:55:14 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Short",
+      "quantity": -120,
       "id": 1
     }
   ],
   "trade-history": [
     {
-      "price": 165.38,
-      "date": "Mon Mar 21 2022 20:27:14 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 20:55:14 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
       "type": "Buy",
-      "quantity": "40",
+      "quantity": "100",
       "id": 1
     },
     {
-      "price": 165.38,
-      "date": "Mon Mar 21 2022 20:27:22 GMT-0400 (Eastern Daylight Time)",
-      "symbol": "AAPL",
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 20:55:30 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
       "type": "Sell",
-      "quantity": "30",
+      "quantity": "200",
       "id": 2
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 20:58:59 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Buy",
+      "quantity": "200",
+      "id": 3
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 20:59:11 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Sell",
+      "quantity": "120",
+      "id": 4
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 21:00:56 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Buy",
+      "quantity": "400",
+      "id": 5
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 21:03:00 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Buy",
+      "quantity": "100",
+      "id": 6
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 21:03:16 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Buy",
+      "quantity": "400",
+      "id": 7
+    },
+    {
+      "price": 4.11,
+      "date": "Tue Mar 22 2022 21:03:38 GMT-0400 (Eastern Daylight Time)",
+      "symbol": "BARK",
+      "type": "Sell",
+      "quantity": "1000",
+      "id": 8
     }
   ]
 }
