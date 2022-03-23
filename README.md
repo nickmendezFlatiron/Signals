@@ -75,6 +75,10 @@ Note: [Make sure to install node.js first](https://nodejs.org/en/)
 - [Alpha Vantage API](https://www.alphavantage.co/)
 - [Tradingview Chart Widget](https://www.tradingview.com/widget/)
 
+## License
+
+- This app is free for everyone to use non-commercially
+
 ## Contributors
 
 - [Nick Mendez (Me)](https://github.com/nickmendezFlatiron)
