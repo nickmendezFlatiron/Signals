@@ -1,9 +1,11 @@
 //GLOBAL VARIABLES
+//navigation bar at top of webpage
 const searchbar = document.getElementById('searchbar')
-const toolboxDisplay = document.getElementById('toolbox')
 const searchBtn = document.querySelector('#search-btn')
+const toolboxDisplay = document.getElementById('toolbox')
 const navWatchlist = document.querySelector('#nav-watchlist')
 const navSearchResults = document.querySelector('#nav-search-results')
+
 const tradeTableBody = document.querySelector('#trade-history-body')
 const portfolioTableBody = document.querySelector('#my-portfolio-body')
 let searchResultsMatches = [] ;
@@ -13,7 +15,6 @@ let watchlistStocks ;
 
 
 //EVENT LISTENERS
-
 searchBtn.addEventListener('click',e => {
   e.preventDefault()
   const searchbarValue = searchbar.value 
@@ -33,6 +34,7 @@ navSearchResults.addEventListener('click', e =>{
   marketSearch(url)
 })
 
+//refresh button on My Portfolio
 document.querySelector('#my-portfolio-refresh').addEventListener('click',() => fetchDatabase('portfolio', appendPortfolio))
 
 
@@ -95,7 +97,7 @@ function fetchStockData(url){
     }) 
 }
 
-// fetches local db watchlist data
+// fetches local db data
 function fetchDatabase(db,funct) {
   fetch(`http://localhost:3000/${db}`)
   .then(res => res.json())
@@ -157,16 +159,6 @@ function appendResults(searchResultsMatches) {
   }
 }
 
-//Populates the main info section with the selected 
-function appendDisplay(e) {
-  e.stopPropagation()
-  let url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${e.target.id}&apikey=VXY7DLJ0XAQQON66`
-  fetchStockData(url)
-//   console.log(e.target)
-// console.log(`target id : ${e.target.id}`)
-}
-
-
 //organizes the stock data from the fetch request 
 // Fixes API JSON Object Keys from the fetch request and makes them usable for dot notation
 function organizeStockData(data) {
@@ -179,8 +171,15 @@ function organizeStockData(data) {
     let newKey = camelCase(keyWithoutNumbers)
     stockDataObj[newKey] = `${dataArray[key]}`
   })
-  
 }
+
+//Populates the main info section with the selected 
+function appendDisplay(e) {
+  e.stopPropagation()
+  let url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${e.target.id}&apikey=VXY7DLJ0XAQQON66`
+  fetchStockData(url)
+}
+
 
 //Prepends data of selected stock to the the main display
 function printToDOM(stockDataObj){
@@ -204,7 +203,7 @@ function printToDOM(stockDataObj){
   `
   let price =  document.querySelector('#price')
   let change = document.querySelector('#change-value')
-  // console.log(stockDataObj.Change)
+
   if(stockDataObj.Change < 0) {
     price.classList.add('text-danger')
     change.classList.add('text-danger')
@@ -237,6 +236,7 @@ function printToDOM(stockDataObj){
 
     
     })
+
   //sets watchlist button to active if the stock exists in the Watchlist
   function existsInDatabase(watchlistObj) {
     const duplicates = watchlistObj.filter(stock => {
@@ -348,7 +348,7 @@ function makePortfolio(tradeHistoryObj) {
     }
     return reducer;
   }, [])
-  // console.log(reducer)
+
   fetchDatabase('portfolio',clearPortfolio)
   setTimeout( () => {reducer.forEach(stock => {
       if(stock.quantity > 0) {
