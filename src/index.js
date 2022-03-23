@@ -326,7 +326,7 @@ function appendPortfolio(portfolioObj) {
     tr.innerHTML = `
     <th scope="row">${stock.symbol}</th>
     <td class="text-danger">${stock.type}</td>
-    <td>${(parseInt(stock.quantity) * -1)}</td>
+    <td>${(stock.quantity * -1)}</td>
     <td>${stock.price}</td>
     `
     
