@@ -83,7 +83,6 @@ function marketSearch(url)  {
       let bestMatchesArray = (Object.values(searchresults))[0]
       searchResultsMatches = []
       bestMatchesArray.map(bestMatch => simpleResults(bestMatch))
-      
       appendResults(searchResultsMatches)
     })
 }
@@ -221,7 +220,7 @@ function printToDOM(stockDataObj){
     newTrade.price = roundNumber(stockDataObj.Price)
     newTrade.date = Date().toString()
     newTrade.symbol = stockDataObj.Symbol
-    newTrade.type = camelCase(tradeOptions.value.toString())
+    newTrade.type = camelCase(tradeOptions.value)
     newTrade.quantity = e.target.value
  
     if(e.key === 'Enter' && Number.isInteger(Number(e.target.value)) && e.target.value > 0){ 
@@ -343,9 +342,10 @@ function makePortfolio(tradeHistoryObj) {
     } else if(existing && trade.type === 'Sell') {
       existing.quantity =  parseInt(existing.quantity) - parseInt(trade.quantity);
     }
-    else {
+    else if (trade.type === 'Sell'){
+      trade.quantity = parseInt(trade.quantity * -1)
       reducer.push(trade);
-    }
+    } else {reducer.push(trade)};
     return reducer;
   }, [])
 
